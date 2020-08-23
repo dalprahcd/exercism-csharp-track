@@ -13,7 +13,7 @@ public class SpaceAge
         public const double URANUS          = 84.016846d;
         public const double NEPTUNE         = 164.79132d;
     }
-    private const double EARTH_DAYS         = 365.25d;
+    
     private const double EARTH_YEAR_SECONDS = 31557600d;
     private readonly double livedEarthYears;
 
