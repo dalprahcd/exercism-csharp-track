@@ -4,7 +4,7 @@ using System.Linq;
 
 public class HighScores
 {
-    private IEnumerable<int> scores;
+    private readonly IEnumerable<int> scores;
 
     public HighScores(IEnumerable<int> list) =>
         scores = list ?? new List<int>();
@@ -16,7 +16,7 @@ public class HighScores
         scores.LastOrDefault();
 
     public int PersonalBest() => 
-        scores.Any() ? scores.Max() : default(int);
+        scores.Any() ? scores.Max() : default;
 
     public IEnumerable<int> PersonalTopThree() =>
         scores.OrderByDescending(x => x).Take(3);
