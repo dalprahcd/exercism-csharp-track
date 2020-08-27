@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Exercism.CSharp.Solutions.HelloWorldExercise
+﻿namespace Exercism.CSharp.Solutions.HelloWorldExercise
 {
     public static class HelloWorld
     {

@@ -5,7 +5,7 @@ namespace Exercism.CSharp.Solutions.ResistorColorExercise
 {
     public static class ResistorColor
     {
-        private enum RESISTOR_BANDS
+        private enum ResistorBands
         {
             Black = 0,
             Brown,
@@ -19,17 +19,16 @@ namespace Exercism.CSharp.Solutions.ResistorColorExercise
             White
         }
 
-
         public static int ColorCode(string color)
         {
-            Enum.TryParse(color, true, out RESISTOR_BANDS result);
+            Enum.TryParse(color, true, out ResistorBands result);
             return (int)result;
         }
 
         public static string[] Colors()
         {
             return Enum
-                    .GetNames(typeof(RESISTOR_BANDS))
+                    .GetNames(typeof(ResistorBands))
                     .Select(s => s.ToLower())
                     .ToArray();
         }

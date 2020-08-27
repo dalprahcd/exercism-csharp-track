@@ -6,17 +6,17 @@ namespace Exercism.CSharp.Solutions.DartsExercise
     {
         private struct SCORE
         {
-            public const int OUTSIDE = 0;
-            public const int OUTER_CIRCLE = 1;
-            public const int MIDDLE_CIRCLE = 5;
-            public const int INNER_CIRCLE = 10;
+            public const int OUTSIDE        = 0;
+            public const int OUTER_CIRCLE   = 1;
+            public const int MIDDLE_CIRCLE  = 5;
+            public const int INNER_CIRCLE   = 10;
         }
 
         private struct RADIUS
         {
-            public const double OUTER_CIRCLE = 10.0d;
-            public const double MIDDLE_CIRCLE = 5.0d;
-            public const double INNER_CIRCLE = 1.0d;
+            public const double OUTER_CIRCLE    = 10.0d;
+            public const double MIDDLE_CIRCLE   = 5.0d;
+            public const double INNER_CIRCLE    = 1.0d;
         }
 
         public static int Score(double x, double y)
@@ -40,6 +40,6 @@ namespace Exercism.CSharp.Solutions.DartsExercise
         }
 
         private static double GetRadius(double x, double y) =>
-            Math.Sqrt(x * x + y * y);
+            Math.Sqrt((x * x) + (y * y));
     }
 }

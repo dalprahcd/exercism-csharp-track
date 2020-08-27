@@ -4,10 +4,10 @@ using System.Linq;
 namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
 {
     public enum Commands
-    { 
-        TurnRight = 'R',
+    {
+        Advance = 'A',
         TurnLeft = 'L',
-        Advance = 'A'
+        TurnRight = 'R'
     }
 
     public enum Direction
@@ -33,7 +33,7 @@ namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
 
         public void Move(string instructions)
         {
-            foreach (var cmd in instructions.ToCharArray())
+            foreach (var cmd in instructions)
             {
                 ExecuteCommand((Commands)cmd);
             }
@@ -43,10 +43,10 @@ namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
         {
             switch (cmd)
             {
-                case Commands.TurnRight: Turn(step: 1); break;
-                case Commands.TurnLeft: Turn(step: -1); break;
-                case Commands.Advance: Advance(Direction); break;
-            };
+                case Commands.TurnRight:    Turn(step: 1);          break;
+                case Commands.TurnLeft:     Turn(step: -1);         break;
+                case Commands.Advance:      Advance(Direction);     break;
+            }
         }
 
         private void Turn(int step)
@@ -72,11 +72,11 @@ namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
         {
             switch (direction)
             {
-                case Direction.North: Y += 1; break;
-                case Direction.East: X += 1; break;
-                case Direction.South: Y -= 1; break;
-                case Direction.West: X -= 1; break;
-            };
+                case Direction.North:   Y++; break;
+                case Direction.East:    X++; break;
+                case Direction.South:   Y--; break;
+                case Direction.West:    X--; break;
+            }
         }
     }
 }

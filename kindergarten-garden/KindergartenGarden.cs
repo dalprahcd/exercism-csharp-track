@@ -6,10 +6,10 @@ namespace Exercism.CSharp.Solutions.KindergartenGardenExercise
 {
     public enum Plant
     {
-        Violets     = 'V',
-        Radishes    = 'R',
         Clover      = 'C',
-        Grass       = 'G'
+        Grass       = 'G',
+        Radishes    = 'R',
+        Violets     = 'V'
     }
 
     public enum Students

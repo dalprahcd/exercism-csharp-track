@@ -1,36 +1,21 @@
 using System;
+using System.Linq;
 
 namespace Exercism.CSharp.Solutions.RnaTranscriptionExercise
 {
     public static class RnaTranscription
     {
-        public static string ToRna(string nucleotide)
-        {
-            var rna = nucleotide.ToCharArray();
+        public static string ToRna(string nucleotide) =>
+            new string(nucleotide.Select(SwitchNucleotide).ToArray());
 
-            for (int i = 0; i < rna.Length; i++)
+        private static char SwitchNucleotide(char nucleotide) =>
+            nucleotide switch
             {
-                switch (rna[i])
-                {
-                    case 'G':
-                        rna[i] = 'C';
-                        break;
-
-                    case 'C':
-                        rna[i] = 'G';
-                        break;
-
-                    case 'T':
-                        rna[i] = 'A';
-                        break;
-
-                    case 'A':
-                        rna[i] = 'U';
-                        break;
-                }
-            }
-
-            return new string(rna);
-        }
+                'G' => 'C',
+                'C' => 'G',
+                'T' => 'A',
+                'A' => 'U',
+                _   => throw new ArgumentException("Invalid nucleotide parameter.", nameof(nucleotide)),
+            };
     }
 }

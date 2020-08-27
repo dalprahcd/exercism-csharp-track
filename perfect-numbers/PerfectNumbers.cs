@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Exercism.CSharp.Solutions.PerfectNumbersExercise
 {
     public enum Classification
     {
-        Perfect,
-        Abundant,
-        Deficient
+        Perfect     = 0,
+        Abundant    = 1,
+        Deficient   = -1
     }
 
     public static class PerfectNumbers
@@ -24,18 +23,7 @@ namespace Exercism.CSharp.Solutions.PerfectNumbersExercise
                                 .Where(x => number % x == 0)
                                 .Sum();
 
-
-            if (aliquotSum > number)
-            {
-                return Classification.Abundant;
-            }
-
-            if (aliquotSum < number)
-            {
-                return Classification.Deficient;
-            }
-
-            return Classification.Perfect;
+            return (Classification) aliquotSum.CompareTo(number);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Exercism.CSharp.Solutions.AcronymExercise
 
             return new string(
                 phrase.Split(separators, StringSplitOptions.RemoveEmptyEntries)
-                .Select(s => s.First())
+                .Select(s => s[0])
                 .ToArray()
             ).ToUpper();
         }

@@ -21,7 +21,7 @@ namespace Exercism.CSharp.Solutions.CollatzConjectureExercise
                 }
                 else
                 {
-                    number = 3 * number + 1;
+                    number = (3 * number) + 1;
                 }
 
                 steps++;

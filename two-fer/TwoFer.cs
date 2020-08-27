@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Exercism.CSharp.Solutions.TwoFerExercise
+﻿namespace Exercism.CSharp.Solutions.TwoFerExercise
 {
     public static class TwoFer
     {

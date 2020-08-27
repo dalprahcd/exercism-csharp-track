@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Exercism.CSharp.Solutions.RobotNameExercise
@@ -20,7 +19,7 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
         public bool Reset()
         {
             // There is no new possible names.
-            if (existingNames.Count == 26 * 26 * 999 - 1) // Not sure about the maximum number
+            if (existingNames.Count == (26 * 26 * 999) - 1) // Not sure about the maximum number
             {
                 return false;
             }
