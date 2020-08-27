@@ -2,22 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class HighScores
+namespace Exercism.CSharp.Solutions.HighScoresExercise
 {
-    private readonly IEnumerable<int> scores;
+    public class HighScores
+    {
+        private readonly IEnumerable<int> scores;
 
-    public HighScores(IEnumerable<int> list) =>
-        scores = list ?? new List<int>();
+        public HighScores(IEnumerable<int> list) =>
+            scores = list ?? new List<int>();
 
-    public IEnumerable<int> Scores() => 
-        scores;
+        public IEnumerable<int> Scores() =>
+            scores;
 
-    public int Latest() => 
-        scores.LastOrDefault();
+        public int Latest() =>
+            scores.LastOrDefault();
 
-    public int PersonalBest() => 
-        scores.Any() ? scores.Max() : default;
+        public int PersonalBest() =>
+            scores.Any() ? scores.Max() : default;
 
-    public IEnumerable<int> PersonalTopThree() =>
-        scores.OrderByDescending(x => x).Take(3);
+        public IEnumerable<int> PersonalTopThree() =>
+            scores.OrderByDescending(x => x).Take(3);
+    }
 }

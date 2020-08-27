@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Linq;
 
-public static class Acronym
+namespace Exercism.CSharp.Solutions.AcronymExercise
 {
-    private static readonly char[] separators = {' ', ',', '/', '-', '_'};
-
-    public static string Abbreviate(string phrase)
+    public static class Acronym
     {
-        if (string.IsNullOrEmpty(phrase))
-        {
-            return string.Empty;
-        }
+        private static readonly char[] separators = { ' ', ',', '/', '-', '_' };
 
-        return new string(
-            phrase.Split(separators, StringSplitOptions.RemoveEmptyEntries)
-            .Select(s => s.First())
-            .ToArray()
-        ).ToUpper();
+        public static string Abbreviate(string phrase)
+        {
+            if (string.IsNullOrEmpty(phrase))
+            {
+                return string.Empty;
+            }
+
+            return new string(
+                phrase.Split(separators, StringSplitOptions.RemoveEmptyEntries)
+                .Select(s => s.First())
+                .ToArray()
+            ).ToUpper();
+        }
     }
 }

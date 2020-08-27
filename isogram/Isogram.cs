@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Linq;
 
-public static class Isogram
+namespace Exercism.CSharp.Solutions.IsogramExercise
 {
-    public static bool IsIsogram(string word)
+    public static class Isogram
     {
-        if (word == null)
+        public static bool IsIsogram(string word)
         {
-            return false;
+            if (word == null)
+            {
+                return false;
+            }
+
+            if (word.All(char.IsWhiteSpace))
+            {
+                return true;
+            }
+
+            var onlyLetters = word
+                                .Where(char.IsLetter)
+                                .Select(c => c.ToString());
+
+            return onlyLetters.Count() == onlyLetters
+                                            .Distinct(StringComparer.OrdinalIgnoreCase)
+                                            .Count();
         }
-
-        if (word.All(char.IsWhiteSpace))
-        {
-            return true;
-        }
-
-        var onlyLetters = word
-                            .Where(char.IsLetter)
-                            .Select(c => c.ToString());
-
-        return onlyLetters.Count() == onlyLetters
-                                        .Distinct(StringComparer.OrdinalIgnoreCase)
-                                        .Count();
     }
 }

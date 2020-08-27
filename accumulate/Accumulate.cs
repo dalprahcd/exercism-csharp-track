@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 
-public static class AccumulateExtensions
+namespace Exercism.CSharp.Solutions.AccumulateExercise
 {
-    public static IEnumerable<U> Accumulate<T, U>(this IEnumerable<T> collection, Func<T, U> func)
+    public static class AccumulateExtensions
     {
-        foreach (var item in collection)
+        public static IEnumerable<U> Accumulate<T, U>(this IEnumerable<T> collection, Func<T, U> func)
         {
-            yield return func(item);
+            foreach (var item in collection)
+            {
+                yield return func(item);
+            }
         }
     }
 }

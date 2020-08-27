@@ -3,36 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public static class Raindrops
+namespace Exercism.CSharp.Solutions.RaindropsExercise
 {
-    public static string Convert(int number)
+    public static class Raindrops
     {
-        IEnumerable<int> factors = Enumerable
-                                        .Range(1, number)
-                                        .Where(n => number % n == 0);
-
-        if (factors.All(f => f != 3 && f != 5 && f != 7))
+        public static string Convert(int number)
         {
-            return number.ToString();
-        }
-        
-        StringBuilder rainsDropBuilder = new StringBuilder();
+            IEnumerable<int> factors = Enumerable
+                                            .Range(1, number)
+                                            .Where(n => number % n == 0);
 
-        if (factors.Contains(3))
-        {
-            rainsDropBuilder.Append("Pling");
-        }
+            if (factors.All(f => f != 3 && f != 5 && f != 7))
+            {
+                return number.ToString();
+            }
 
-        if (factors.Contains(5))
-        {
-            rainsDropBuilder.Append("Plang");
-        }
+            StringBuilder rainsDropBuilder = new StringBuilder();
 
-        if (factors.Contains(7))
-        {
-            rainsDropBuilder.Append("Plong");
-        }
+            if (factors.Contains(3))
+            {
+                rainsDropBuilder.Append("Pling");
+            }
 
-        return rainsDropBuilder.ToString();
+            if (factors.Contains(5))
+            {
+                rainsDropBuilder.Append("Plang");
+            }
+
+            if (factors.Contains(7))
+            {
+                rainsDropBuilder.Append("Plong");
+            }
+
+            return rainsDropBuilder.ToString();
+        }
     }
 }

@@ -1,16 +1,19 @@
 ﻿using System;
 
-public static class Grains
+namespace Exercism.CSharp.Solutions.GrainsExercise
 {
-    public static ulong Square(int n)
+    public static class Grains
     {
-        if (n < 1 || n > 64)
+        public static ulong Square(int n)
         {
-            throw new ArgumentOutOfRangeException(nameof(n));
+            if (n < 1 || n > 64)
+            {
+                throw new ArgumentOutOfRangeException(nameof(n));
+            }
+
+            return 1UL << (n - 1);
         }
 
-        return 1UL << (n - 1);
+        public static ulong Total() => ulong.MaxValue;
     }
-
-    public static ulong Total() => ulong.MaxValue;
 }

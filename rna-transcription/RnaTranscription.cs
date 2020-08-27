@@ -1,33 +1,36 @@
 using System;
 
-public static class RnaTranscription
+namespace Exercism.CSharp.Solutions.RnaTranscriptionExercise
 {
-    public static string ToRna(string nucleotide)
+    public static class RnaTranscription
     {
-        var rna = nucleotide.ToCharArray();
-
-        for (int i = 0; i < rna.Length; i++)
+        public static string ToRna(string nucleotide)
         {
-            switch (rna[i])
+            var rna = nucleotide.ToCharArray();
+
+            for (int i = 0; i < rna.Length; i++)
             {
-                case 'G':
-                    rna[i] = 'C';
-                    break;
+                switch (rna[i])
+                {
+                    case 'G':
+                        rna[i] = 'C';
+                        break;
 
-                case 'C':
-                    rna[i] = 'G';
-                    break;
+                    case 'C':
+                        rna[i] = 'G';
+                        break;
 
-                case 'T':
-                    rna[i] = 'A';
-                    break;
+                    case 'T':
+                        rna[i] = 'A';
+                        break;
 
-                case 'A':
-                    rna[i] = 'U';
-                    break;
+                    case 'A':
+                        rna[i] = 'U';
+                        break;
+                }
             }
-        }
 
-        return new string(rna);
+            return new string(rna);
+        }
     }
 }

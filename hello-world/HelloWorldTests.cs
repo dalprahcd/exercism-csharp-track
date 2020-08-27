@@ -2,11 +2,14 @@
 
 using Xunit;
 
-public class HelloWorldTests
+namespace Exercism.CSharp.Solutions.HelloWorldExercise.Tests
 {
-    [Fact]
-    public void Say_hi_()
+    public class HelloWorldTests
     {
-        Assert.Equal("Hello, World!", HelloWorld.Hello());
+        [Fact]
+        public void Say_hi_()
+        {
+            Assert.Equal("Hello, World!", HelloWorld.Hello());
+        }
     }
 }

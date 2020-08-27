@@ -2,32 +2,35 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class GradeSchool
+namespace Exercism.CSharp.Solutions.GradeSchoolExercise
 {
-    private readonly Dictionary<string, int> schoolRoster = new Dictionary<string, int>();
-
-    public void Add(string student, int grade)
+    public class GradeSchool
     {
-        if (schoolRoster.ContainsKey(student))
+        private readonly Dictionary<string, int> schoolRoster = new Dictionary<string, int>();
+
+        public void Add(string student, int grade)
         {
-            schoolRoster[student] = grade;
+            if (schoolRoster.ContainsKey(student))
+            {
+                schoolRoster[student] = grade;
+            }
+            else
+            {
+                schoolRoster.Add(student, grade);
+            }
         }
-        else 
-        {
-            schoolRoster.Add(student, grade);
-        }
+
+        public IEnumerable<string> Roster() =>
+            schoolRoster
+                .OrderBy(k => k.Value)
+                .ThenBy(k => k.Key)
+                .Select(k => k.Key);
+
+
+        public IEnumerable<string> Grade(int grade) =>
+            schoolRoster
+                .Where(k => k.Value == grade)
+                .Select(k => k.Key)
+                .OrderBy(s => s);
     }
-
-    public IEnumerable<string> Roster() => 
-        schoolRoster
-            .OrderBy(k => k.Value)
-            .ThenBy(k => k.Key)
-            .Select(k => k.Key);
-    
-
-    public IEnumerable<string> Grade(int grade) =>
-        schoolRoster
-            .Where(k => k.Value == grade)
-            .Select(k => k.Key)
-            .OrderBy(s => s);
 }

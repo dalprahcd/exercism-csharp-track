@@ -1,9 +1,12 @@
 ﻿using System;
 
-public static class HelloWorld
+namespace Exercism.CSharp.Solutions.HelloWorldExercise
 {
-    public static string Hello()
+    public static class HelloWorld
     {
-        return "Hello, World!";
+        public static string Hello()
+        {
+            return "Hello, World!";
+        }
     }
 }

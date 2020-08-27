@@ -2,29 +2,32 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public static class Hamming
+namespace Exercism.CSharp.Solutions.HammingExercise
 {
-    public static int Distance(string firstStrand, string secondStrand)
+    public static class Hamming
     {
-        if (firstStrand == null || secondStrand == null)
+        public static int Distance(string firstStrand, string secondStrand)
         {
-            throw new ArgumentException();
-        }
-
-        if (firstStrand.Length != secondStrand.Length)
-        {
-            throw new ArgumentException();
-        }
-
-        int hammingDistance = 0;
-        for (int i = 0; i < firstStrand.Length; i++)
-        {
-            if (firstStrand[i] != secondStrand[i])
+            if (firstStrand == null || secondStrand == null)
             {
-                hammingDistance++;
+                throw new ArgumentException();
             }
-        }
 
-        return hammingDistance;
+            if (firstStrand.Length != secondStrand.Length)
+            {
+                throw new ArgumentException();
+            }
+
+            int hammingDistance = 0;
+            for (int i = 0; i < firstStrand.Length; i++)
+            {
+                if (firstStrand[i] != secondStrand[i])
+                {
+                    hammingDistance++;
+                }
+            }
+
+            return hammingDistance;
+        }
     }
 }

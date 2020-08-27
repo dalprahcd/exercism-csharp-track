@@ -1,12 +1,15 @@
 ﻿using System;
 
-public static class TwoFer
+namespace Exercism.CSharp.Solutions.TwoFerExercise
 {
-    // In order to get the tests running, first you need to make sure the Speak method 
-    // can be called both without any arguments and also by passing one string argument.
-    public static string Speak(string name = "you")
+    public static class TwoFer
     {
-        if (string.IsNullOrWhiteSpace(name)) { name = "you";}
-        return $"One for {name}, one for me.";
+        // In order to get the tests running, first you need to make sure the Speak method 
+        // can be called both without any arguments and also by passing one string argument.
+        public static string Speak(string name = "you")
+        {
+            if (string.IsNullOrWhiteSpace(name)) { name = "you"; }
+            return $"One for {name}, one for me.";
+        }
     }
 }

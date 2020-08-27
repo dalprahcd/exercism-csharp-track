@@ -2,22 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public static class Series
+namespace Exercism.CSharp.Solutions.SeriesExercise
 {
-    public static IEnumerable<string> Slices(string numbers, int sliceLength)
+    public static class Series
     {
-        if (string.IsNullOrEmpty(numbers))
+        public static IEnumerable<string> Slices(string numbers, int sliceLength)
         {
-            throw new ArgumentException(nameof(numbers));
-        }
+            if (string.IsNullOrEmpty(numbers))
+            {
+                throw new ArgumentException(nameof(numbers));
+            }
 
-        if (sliceLength < 1 || sliceLength > numbers.Length)
-        {
-            throw new ArgumentException(nameof(sliceLength));
-        }
+            if (sliceLength < 1 || sliceLength > numbers.Length)
+            {
+                throw new ArgumentException(nameof(sliceLength));
+            }
 
-        return Enumerable
-                    .Range(0, numbers.Length - sliceLength + 1)
-                    .Select(i => numbers.Substring(i, sliceLength));
+            return Enumerable
+                        .Range(0, numbers.Length - sliceLength + 1)
+                        .Select(i => numbers.Substring(i, sliceLength));
+        }
     }
 }

@@ -1,29 +1,32 @@
 ﻿using System;
 using System.Linq;
 
-public class DndCharacter
+namespace Exercism.CSharp.Solutions.DndCharacterExercise
 {
-    private static readonly Random rnd  = new Random();
+    public class DndCharacter
+    {
+        private static readonly Random rnd = new Random();
 
-    public int Strength { get; }        = Ability();
-    public int Dexterity { get; }       = Ability();
-    public int Constitution { get; }    = Ability();
-    public int Intelligence { get; }    = Ability();
-    public int Wisdom { get; }          = Ability();
-    public int Charisma { get; }        = Ability();
-    public int Hitpoints                => 10 + Modifier(Constitution);
+        public int Strength { get; } = Ability();
+        public int Dexterity { get; } = Ability();
+        public int Constitution { get; } = Ability();
+        public int Intelligence { get; } = Ability();
+        public int Wisdom { get; } = Ability();
+        public int Charisma { get; } = Ability();
+        public int Hitpoints => 10 + Modifier(Constitution);
 
-    public static int Modifier(int score) =>
-        (int)Math.Floor((score - 10) / 2.0d);
+        public static int Modifier(int score) =>
+            (int)Math.Floor((score - 10) / 2.0d);
 
-    public static int Ability() =>
-        Enumerable
-            .Range(0, 4)
-            .Select(x => rnd.Next(1, 7))
-            .OrderByDescending(x => x)
-            .Take(3)
-            .Sum();
+        public static int Ability() =>
+            Enumerable
+                .Range(0, 4)
+                .Select(x => rnd.Next(1, 7))
+                .OrderByDescending(x => x)
+                .Take(3)
+                .Sum();
 
-    public static DndCharacter Generate() =>
-        new DndCharacter();
+        public static DndCharacter Generate() =>
+            new DndCharacter();
+    }
 }

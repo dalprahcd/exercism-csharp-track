@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Linq;
 
-public static class Pangram
+namespace Exercism.CSharp.Solutions.PangramExercise
 {
-    private const string alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-    public static bool IsPangram(string input)
+    public static class Pangram
     {
-        if (string.IsNullOrWhiteSpace(input))
-        {
-            return false;
-        }
+        private const string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-        return alphabet.All(
-            s => input.Contains(s, StringComparison.OrdinalIgnoreCase));
+        public static bool IsPangram(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+
+            return alphabet.All(
+                s => input.Contains(s, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }
