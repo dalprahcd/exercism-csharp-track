@@ -33,8 +33,8 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
                     .AppendFormat("{0}", (char)random.Next('A', 'Z'))
                     .AppendFormat("{0}", (char)random.Next('A', 'Z'))
                     .AppendFormat("{0:000}", random.Next(0, 999));
-
-            } while (!existingNames.Add(nameBuilder.ToString()));
+            }
+            while (!existingNames.Add(nameBuilder.ToString()));
 
             Name = nameBuilder.ToString();
             return true;
