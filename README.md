@@ -1,4 +1,5 @@
-# Exercism
+# Exercism 
+[![CodeFactor](https://www.codefactor.io/repository/github/dalprahcd/exercism-csharp-track/badge)](https://www.codefactor.io/repository/github/dalprahcd/exercism-csharp-track)
 
 A repository for exercises I have completed on [Exercism][].
 
