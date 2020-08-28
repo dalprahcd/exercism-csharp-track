@@ -1,13 +1,10 @@
-﻿using System;
-using System.Linq;
-
-namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
+﻿namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
 {
     public enum Commands
     {
         Advance = 'A',
-        TurnLeft = 'L',
-        TurnRight = 'R'
+        Left    = 'L',
+        Right   = 'R'
     }
 
     public enum Direction
@@ -43,34 +40,37 @@ namespace Exercism.CSharp.Solutions.RobotSimulatorExercise
         {
             switch (cmd)
             {
-                case Commands.TurnRight:    Turn(step: 1);          break;
-                case Commands.TurnLeft:     Turn(step: -1);         break;
-                case Commands.Advance:      Advance(Direction);     break;
+                case Commands.Right:    TurnRight();    break;
+                case Commands.Left:     TurnLeft();     break;
+                case Commands.Advance:  Advance();      break;
             }
         }
 
-        private void Turn(int step)
+        private void TurnRight()
         {
-            var all = Enum.GetValues(typeof(Direction)).Cast<Direction>().ToArray();
-            int start = Array.IndexOf(all, Direction);
-            int next = start + step;
-
-            if (next < 0)
+            switch (Direction)
             {
-                next = all.Length - 1;
+                case Direction.North:   Direction = Direction.East;     break;
+                case Direction.East:    Direction = Direction.South;    break;
+                case Direction.South:   Direction = Direction.West;     break;
+                case Direction.West:    Direction = Direction.North;    break;
             }
-
-            if (next >= all.Length)
-            {
-                next = 0;
-            }
-
-            Direction = all[next];
         }
 
-        private void Advance(Direction direction)
+        private void TurnLeft()
         {
-            switch (direction)
+            switch (Direction)
+            {
+                case Direction.North:   Direction = Direction.West;     break;
+                case Direction.East:    Direction = Direction.North;    break;
+                case Direction.South:   Direction = Direction.East;     break;
+                case Direction.West:    Direction = Direction.South;    break;
+            }
+        }
+
+        private void Advance()
+        {
+            switch (Direction)
             {
                 case Direction.North:   Y++; break;
                 case Direction.East:    X++; break;
