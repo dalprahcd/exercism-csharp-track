@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Exercism.CSharp.Solutions.PhoneNumberExercise
@@ -8,34 +7,13 @@ namespace Exercism.CSharp.Solutions.PhoneNumberExercise
     {
         public static string Clean(string phoneNumber)
         {
-            char[] clean = Regex.Replace(phoneNumber, "[^0-9]", "").ToCharArray();
+            var clean = Regex.Replace(phoneNumber, "[^0-9]", "");
 
-            if (clean.Length < 10 || clean.Length > 11)
-            {
-                throw new ArgumentException("Invalid phone number length", nameof(phoneNumber));
-            }
-
-            if (clean.Length == 11 && clean[0] != '1')
-            {
-                throw new ArgumentException("Invalid country code", nameof(phoneNumber));
-            }
-
-            if (clean.Length == 11)
-            {
-                clean = clean.Skip(1).ToArray();
-            }
-
-            if (clean[0] == '0' || clean[0] == '1')
-            {
-                throw new ArgumentException("Invalid area code", nameof(phoneNumber));
-            }
-
-            if (clean[3] == '0' || clean[3] == '1')
-            {
-                throw new ArgumentException("Invalid exchange code", nameof(phoneNumber));
-            }
-
-            return new string(clean);
+            // Reminder: Improve with Regex
+            var match = Regex.Match(clean, @"^1?([2-9]\d{2}[2-9]\d{6})$");
+            return match.Success
+                    ? match.Groups[1].ToString()
+                    : throw new ArgumentException();
         }
     }
 }
