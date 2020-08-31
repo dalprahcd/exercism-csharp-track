@@ -68,7 +68,7 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
             int aInv = ModularMultiplicativeInverse(a);
 
             int x = ch - 'a';
-            int Dx = aInv * (x - b) % m;
+            int Dx = (aInv * (x - b)) % m;
 
             if (Dx < 0) { Dx += m; }
 
@@ -79,7 +79,7 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
         {
             for (int x = 0; x < m; x++)
             {
-                if (a * x % m == 1)
+                if ((a * x) % m == 1)
                 {
                     return x;
                 }
