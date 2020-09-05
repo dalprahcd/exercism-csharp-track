@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Exercism.CSharp.Solutions.RobotNameExercise
 {
     public class Robot
     {
-        private static readonly Random random = new Random();
-        private static readonly HashSet<string> existingNames = new HashSet<string>();
+        private static readonly HashSet<string> allPossibleNames = GetAllPossibleNames();
+        private static readonly HashSet<string> takenNames = new HashSet<string>();
 
         public Robot()
         {
@@ -16,28 +17,65 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
 
         public string Name { get; private set; }
 
-        public bool Reset()
+        public void Reset()
         {
-            // There is no new possible names.
-            if (existingNames.Count == (26 * 26 * 999) - 1) // Not sure about the maximum number
+            if (takenNames.Count == allPossibleNames.Count)
             {
-                return false;
+                throw new InvalidOperationException("There are no names left!");
             }
 
-            StringBuilder nameBuilder = new StringBuilder();
+            if (takenNames.Count == 0)
+            {
+                Name = allPossibleNames.First();
+                takenNames.Add(Name);
+            }
+            else
+            {
+                string previousName = Name;
+                Name = allPossibleNames.Except(takenNames).First();
+                takenNames.Remove(previousName);
+                takenNames.Add(Name);
+            }
+        }
+
+        private static HashSet<string> GetAllPossibleNames()
+        {
+            HashSet<string> names       = new HashSet<string>();
+            StringBuilder nameBuilder   = new StringBuilder(5);
+            char firstLetter            = 'A';
+            char secondLetter           = 'A';
+            int number                  = 000;
+            bool keepGoing              = true;
 
             do
             {
-                nameBuilder.Clear();
                 nameBuilder
-                    .AppendFormat("{0}", (char)random.Next('A', 'Z'))
-                    .AppendFormat("{0}", (char)random.Next('A', 'Z'))
-                    .AppendFormat("{0:000}", random.Next(0, 999));
-            }
-            while (!existingNames.Add(nameBuilder.ToString()));
+                    .Append(firstLetter)
+                    .Append(secondLetter)
+                    .AppendFormat("{0:000}", number);
 
-            Name = nameBuilder.ToString();
-            return true;
+                names.Add(nameBuilder.ToString());
+                nameBuilder.Clear();
+
+                number++;
+                if (number == 999)
+                {
+                    number = 0;
+                    secondLetter++;
+                    if (secondLetter == 'Z')
+                    {
+                        secondLetter = 'A';
+                        firstLetter++;
+                        if (firstLetter == 'Z')
+                        {
+                            keepGoing = false;
+                        }
+                    }
+                }
+            }
+            while (keepGoing);
+
+            return names;
         }
     }
 }
