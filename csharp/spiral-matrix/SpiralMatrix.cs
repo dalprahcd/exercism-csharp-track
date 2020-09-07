@@ -2,65 +2,33 @@
 {
     public static class SpiralMatrix
     {
-        private enum Direction
-        {
-            Left = 0,
-            Bottom,
-            Right,
-            Top
-        }
-
         public static int[,] GetMatrix(int size)
         {
-            var output = new int [size, size];
-            int x = 0, y = 0;
-            var direction = Direction.Left;
+            int[,] output = new int[size, size];
 
-            for (int i = 0; i < size * size; i++)
+            int value = 1;
+            int start = 0, end = size - 1;
+
+            while (value <= size * size)
             {
-                output[x, y] = i + 1;
-                switch (direction)
-                {
-                    case Direction.Left:
-                        if (y + 1 == size || output[x, y + 1] != 0)
-                        {
-                            x++;
-                            direction = Direction.Bottom;
-                            break;
-                        }
-                        y++;
-                        break;
+                // Right direction
+                for (int row = start; row <= end; row++)
+                { output[start, row] = value++; }
 
-                    case Direction.Bottom:
-                        if (x + 1 == size || output[x + 1, y] != 0)
-                        {
-                            y--;
-                            direction = Direction.Right;
-                            break;
-                        }
-                        x++;
-                        break;
+                // Down direction
+                for (int column = start + 1; column <= end; column++)
+                { output[column, end] = value++; }
 
-                    case Direction.Right:
-                        if (y - 1 < 0 || output[x, y - 1] != 0)
-                        {
-                            x--;
-                            direction = Direction.Top;
-                            break;
-                        }
-                        y--;
-                        break;
+                // Left direction
+                for (int row = end - 1; row >= start; row--)
+                { output[end, row] = value++; }
 
-                    case Direction.Top:
-                        if (x -1 < 0 || output[x - 1, y] != 0)
-                        {
-                            y++;
-                            direction = Direction.Left;
-                            break;
-                        }
-                        x--;
-                        break;
-                }
+                // Up direction
+                for (int column = end - 1; column >= start + 1; column--)
+                { output[column, start] = value++; }
+
+                start++;
+                end--;
             }
 
             return output;
