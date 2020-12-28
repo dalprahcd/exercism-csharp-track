@@ -10,10 +10,7 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
         private static readonly HashSet<string> allPossibleNames = GetAllPossibleNames();
         private static readonly HashSet<string> takenNames = new HashSet<string>();
 
-        public Robot()
-        {
-            Reset();
-        }
+        public Robot() => Reset();
 
         public string Name { get; private set; }
 

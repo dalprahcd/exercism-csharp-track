@@ -80,10 +80,7 @@ namespace Exercism.CSharp.Solutions.RationalNumberExercise
             return new RationalNumber(num, den).Reduce();
         }
 
-        public RationalNumber Abs()
-        {
-            return new RationalNumber(Math.Abs(Numerator), Math.Abs(Denominator)).Reduce();
-        }
+        public RationalNumber Abs() => new RationalNumber(Math.Abs(Numerator), Math.Abs(Denominator)).Reduce();
 
         public RationalNumber Reduce()
         {
