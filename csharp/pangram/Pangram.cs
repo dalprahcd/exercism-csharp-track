@@ -5,17 +5,10 @@ namespace Exercism.CSharp.Solutions.PangramExercise
 {
     public static class Pangram
     {
-        private const string alphabet = "abcdefghijklmnopqrstuvwxyz";
+        private const string Alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-        public static bool IsPangram(string input)
-        {
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return false;
-            }
-
-            return alphabet.All(
-                s => input.Contains(s, StringComparison.OrdinalIgnoreCase));
-        }
+        public static bool IsPangram(string input) =>
+            !string.IsNullOrWhiteSpace(input) &&
+            Alphabet.All(s => input.Contains(s, StringComparison.OrdinalIgnoreCase));
     }
 }

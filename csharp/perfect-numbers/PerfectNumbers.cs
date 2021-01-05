@@ -19,7 +19,8 @@ namespace Exercism.CSharp.Solutions.PerfectNumbersExercise
                 throw new ArgumentOutOfRangeException(nameof(number));
             }
 
-            int aliquotSum = Enumerable.Range(1, number / 2)
+            int aliquotSum = Enumerable
+                                .Range(1, number / 2)
                                 .Where(x => number % x == 0)
                                 .Sum();
 

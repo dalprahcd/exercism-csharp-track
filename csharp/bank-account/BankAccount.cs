@@ -4,23 +4,23 @@ namespace Exercism.CSharp.Solutions.BankAccountExercise
 {
     public class BankAccount
     {
-        private readonly object syncLock = new object();
-        private bool isClosed;
-        private decimal balance;
+        private readonly object _syncLock = new object();
+        private bool _isClosed;
+        private decimal _balance;
 
         public void Open()
         {
-            lock (syncLock)
+            lock (_syncLock)
             {
-                isClosed = false;
+                _isClosed = false;
             }
         }
 
         public void Close()
         {
-            lock (syncLock)
+            lock (_syncLock)
             {
-                isClosed = true;
+                _isClosed = true;
             }
         }
 
@@ -28,26 +28,24 @@ namespace Exercism.CSharp.Solutions.BankAccountExercise
         {
             get
             {
-                lock (syncLock)
+                lock (_syncLock)
                 {
-                    if (isClosed)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    return balance;
+                    return _isClosed
+                        ? throw new InvalidOperationException()
+                        : _balance;
                 }
             }
         }
 
         public void UpdateBalance(decimal change)
         {
-            lock (syncLock)
+            lock (_syncLock)
             {
-                if (isClosed)
+                if (_isClosed)
                 {
                     throw new InvalidOperationException();
                 }
-                balance += change;
+                _balance += change;
             }
         }
     }

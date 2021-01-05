@@ -16,12 +16,10 @@ namespace Exercism.CSharp.Solutions.ProverbExercise
 
             for (int i = 0; i < subjects.Length - 1; i++)
             {
-                proverb
-                    .Add($"For want of a {subjects[i]} the {subjects[i + 1]} was lost.");
+                proverb.Add($"For want of a {subjects[i]} the {subjects[i + 1]} was lost.");
             }
 
-            proverb
-                .Add($"And all for the want of a {subjects[0]}.");
+            proverb.Add($"And all for the want of a {subjects[0]}.");
 
             return proverb;
         }

@@ -16,20 +16,14 @@ namespace Exercism.CSharp.Solutions.BobExercise
 
             if (statement.IsShouting())
             {
-                if (statement.IsQuestion())
-                {
-                    return "Calm down, I know what I'm doing!";
-                }
-
-                return "Whoa, chill out!";
+                return statement.IsQuestion()
+                            ? "Calm down, I know what I'm doing!"
+                            : "Whoa, chill out!";
             }
 
-            if (statement.IsQuestion())
-            {
-                return "Sure.";
-            }
-
-            return "Whatever.";
+            return statement.IsQuestion()
+                    ? "Sure."
+                    : "Whatever.";
         }
 
         private static bool IsShouting(this string text) =>

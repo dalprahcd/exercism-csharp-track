@@ -5,7 +5,7 @@ namespace Exercism.CSharp.Solutions.DndCharacterExercise
 {
     public class DndCharacter
     {
-        private static readonly Random rnd = new Random();
+        private static readonly Random _rnd = new Random();
 
         public int Strength { get; }        = Ability();
         public int Dexterity { get; }       = Ability();
@@ -21,7 +21,7 @@ namespace Exercism.CSharp.Solutions.DndCharacterExercise
         public static int Ability() =>
             Enumerable
                 .Range(0, 4)
-                .Select(_ => rnd.Next(1, 7))
+                .Select(_ => _rnd.Next(1, 7))
                 .OrderByDescending(x => x)
                 .Take(3)
                 .Sum();

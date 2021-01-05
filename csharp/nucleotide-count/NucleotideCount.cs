@@ -6,7 +6,7 @@ namespace Exercism.CSharp.Solutions.NucleotideCountExercise
 {
     public static class NucleotideCount
     {
-        private static readonly char[] nucleotide = { 'A', 'C', 'G', 'T' };
+        private static readonly char[] _nucleotide = { 'A', 'C', 'G', 'T' };
 
         public static IDictionary<char, int> Count(string sequence)
         {
@@ -15,14 +15,14 @@ namespace Exercism.CSharp.Solutions.NucleotideCountExercise
                 throw new ArgumentNullException(nameof(sequence));
             }
 
-            if (sequence.ToCharArray().Any(c => !nucleotide.Contains(c)))
+            if (sequence.ToCharArray().Any(c => !_nucleotide.Contains(c)))
             {
                 throw new ArgumentException(nameof(sequence));
             }
 
             Dictionary<char, int> output = new Dictionary<char, int>();
 
-            foreach (var n in nucleotide)
+            foreach (var n in _nucleotide)
             {
                 output.Add(n, sequence.ToCharArray().Count(c => c == n));
             }

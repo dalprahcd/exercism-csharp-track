@@ -5,12 +5,12 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
 {
     public static class AffineCipher
     {
-        private const int m = 26;
-        private const int letterCount = 5;
+        private const int M = 26;
+        private const int LetterCount = 5;
 
         public static string Encode(string plainText, int a, int b)
         {
-            if (GreatestCommonDivisor(a, m) != 1)
+            if (GreatestCommonDivisor(a, M) != 1)
             {
                 throw new ArgumentException("Error: a and m must be coprime.", nameof(a));
             }
@@ -21,7 +21,7 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
                                 .Select(c => c.Encrypt(a, b))
                                 .ToList();
 
-            for (int i = letterCount; i < cipheredText.Count; i += letterCount + 1)
+            for (int i = LetterCount; i < cipheredText.Count; i += LetterCount + 1)
             {
                 cipheredText.Insert(i, ' ');
             }
@@ -31,7 +31,7 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
 
         public static string Decode(string cipheredText, int a, int b)
         {
-            if (GreatestCommonDivisor(a, m) != 1)
+            if (GreatestCommonDivisor(a, M) != 1)
             {
                 throw new ArgumentException("Error: a and m must be coprime.", nameof(a));
             }
@@ -53,7 +53,7 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
             }
 
             int x = ch - 'a';
-            int Ex = ((a * x) + b) % m;
+            int Ex = ((a * x) + b) % M;
 
             return (char)(Ex + 'a');
         }
@@ -68,18 +68,18 @@ namespace Exercism.CSharp.Solutions.AffineCipherExercise
             int aInv = ModularMultiplicativeInverse(a);
 
             int x = ch - 'a';
-            int Dx = (aInv * (x - b)) % m;
+            int Dx = (aInv * (x - b)) % M;
 
-            if (Dx < 0) { Dx += m; }
+            if (Dx < 0) { Dx += M; }
 
             return (char)(Dx + 'a');
         }
 
         private static int ModularMultiplicativeInverse(int a)
         {
-            for (int x = 0; x < m; x++)
+            for (int x = 0; x < M; x++)
             {
-                if ((a * x) % m == 1)
+                if ((a * x) % M == 1)
                 {
                     return x;
                 }

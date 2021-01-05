@@ -7,8 +7,8 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
 {
     public class Robot
     {
-        private static readonly HashSet<string> allPossibleNames = GetAllPossibleNames();
-        private static readonly HashSet<string> takenNames = new HashSet<string>();
+        private static readonly HashSet<string> _allPossibleNames = GetAllPossibleNames();
+        private static readonly HashSet<string> _takenNames = new HashSet<string>();
 
         public Robot() => Reset();
 
@@ -16,22 +16,22 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
 
         public void Reset()
         {
-            if (takenNames.Count == allPossibleNames.Count)
+            if (_takenNames.Count == _allPossibleNames.Count)
             {
                 throw new InvalidOperationException("There are no names left!");
             }
 
-            if (takenNames.Count == 0)
+            if (_takenNames.Count == 0)
             {
-                Name = allPossibleNames.First();
-                takenNames.Add(Name);
+                Name = _allPossibleNames.First();
+                _takenNames.Add(Name);
             }
             else
             {
                 string previousName = Name;
-                Name = allPossibleNames.Except(takenNames).First();
-                takenNames.Remove(previousName);
-                takenNames.Add(Name);
+                Name = _allPossibleNames.Except(_takenNames).First();
+                _takenNames.Remove(previousName);
+                _takenNames.Add(Name);
             }
         }
 

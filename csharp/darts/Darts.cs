@@ -4,39 +4,39 @@ namespace Exercism.CSharp.Solutions.DartsExercise
 {
     public static class Darts
     {
-        private struct SCORE
+        private struct Points
         {
-            public const int OUTSIDE        = 0;
-            public const int OUTER_CIRCLE   = 1;
-            public const int MIDDLE_CIRCLE  = 5;
-            public const int INNER_CIRCLE   = 10;
+            public const int Outside        = 0;
+            public const int OuterCircle   = 1;
+            public const int MiddleCircle  = 5;
+            public const int InnerCircle   = 10;
         }
 
-        private struct RADIUS
+        private struct Radius
         {
-            public const double OUTER_CIRCLE    = 10.0d;
-            public const double MIDDLE_CIRCLE   = 5.0d;
-            public const double INNER_CIRCLE    = 1.0d;
+            public const double OuterCircle    = 10.0d;
+            public const double MiddleCircle   = 5.0d;
+            public const double InnerCircle    = 1.0d;
         }
 
         public static int Score(double x, double y)
         {
             double landingRadius = GetRadius(x, y);
 
-            if (landingRadius <= RADIUS.INNER_CIRCLE)
+            if (landingRadius <= Radius.InnerCircle)
             {
-                return SCORE.INNER_CIRCLE;
+                return Points.InnerCircle;
             }
-            else if (landingRadius <= RADIUS.MIDDLE_CIRCLE)
+            else if (landingRadius <= Radius.MiddleCircle)
             {
-                return SCORE.MIDDLE_CIRCLE;
+                return Points.MiddleCircle;
             }
-            else if (landingRadius <= RADIUS.OUTER_CIRCLE)
+            else if (landingRadius <= Radius.OuterCircle)
             {
-                return SCORE.OUTER_CIRCLE;
+                return Points.OuterCircle;
             }
 
-            return SCORE.OUTSIDE;
+            return Points.Outside;
         }
 
         private static double GetRadius(double x, double y) =>

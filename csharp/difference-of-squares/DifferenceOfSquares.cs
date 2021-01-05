@@ -13,8 +13,7 @@ namespace Exercism.CSharp.Solutions.DifferenceOfSquaresExercise
         public static int CalculateSumOfSquares(int max) =>
             Enumerable.Range(1, max).Sum(x => x * x);
 
-        public static int CalculateDifferenceOfSquares(int max)/* =>
-        CalculateSquareOfSum(max) - CalculateSumOfSquares(max);//*/
+        public static int CalculateDifferenceOfSquares(int max)
         {
             // Let's not iterate two times
             var sum = 0;

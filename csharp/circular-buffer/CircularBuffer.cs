@@ -4,10 +4,10 @@ namespace Exercism.CSharp.Solutions.CircularBufferExercise
 {
     public class CircularBuffer<T>
     {
-        private readonly T[] buffer;
-        private int read;
-        private int write;
-        private int items;
+        private readonly T[] _buffer;
+        private int _read;
+        private int _write;
+        private int _items;
 
         public CircularBuffer(int capacity)
         {
@@ -16,54 +16,54 @@ namespace Exercism.CSharp.Solutions.CircularBufferExercise
                 throw new ArgumentOutOfRangeException(nameof(capacity));
             }
 
-            buffer = new T[capacity];
-            read = write = items = 0;
+            _buffer = new T[capacity];
+            _read = _write = _items = 0;
         }
 
         public T Read()
         {
-            if (items == 0)
+            if (_items == 0)
             {
                 throw new InvalidOperationException("Buffer empty!");
             }
 
-            T value = buffer[read];
-            read = (read + 1) % buffer.Length;
-            items--;
+            T value = _buffer[_read];
+            _read = (_read + 1) % _buffer.Length;
+            _items--;
 
             return value;
         }
 
         public void Write(T value)
         {
-            if (items == buffer.Length)
+            if (_items == _buffer.Length)
             {
                 throw new InvalidOperationException("Buffer full!");
             }
 
-            buffer[write] = value;
-            write = (write + 1) % buffer.Length;
-            items++;
+            _buffer[_write] = value;
+            _write = (_write + 1) % _buffer.Length;
+            _items++;
         }
 
         public void Overwrite(T value)
         {
-            if (items < buffer.Length)
+            if (_items < _buffer.Length)
             {
                 Write(value);
             }
             else
             {
-                buffer[write] = value;
-                write = (write + 1) % buffer.Length;
-                read = (read + 1) % buffer.Length;
+                _buffer[_write] = value;
+                _write = (_write + 1) % _buffer.Length;
+                _read = (_read + 1) % _buffer.Length;
             }
         }
 
         public void Clear()
         {
-            items = 0;
-            read = write;
+            _items = 0;
+            _read = _write;
         }
     }
 }

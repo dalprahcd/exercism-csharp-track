@@ -9,7 +9,6 @@ namespace Exercism.CSharp.Solutions.PhoneNumberExercise
         {
             var clean = Regex.Replace(phoneNumber, "[^0-9]", "");
 
-            // Reminder: Improve with Regex
             var match = Regex.Match(clean, @"^1?([2-9]\d{2}[2-9]\d{6})$");
             return match.Success
                     ? match.Groups[1].ToString()

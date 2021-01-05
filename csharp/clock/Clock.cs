@@ -4,8 +4,8 @@ namespace Exercism.CSharp.Solutions.ClockExercise
 {
     public class Clock
     {
-        private readonly int hours;
-        private readonly int minutes;
+        private readonly int _hours;
+        private readonly int _minutes;
 
         public Clock(int hours, int minutes)
         {
@@ -23,25 +23,25 @@ namespace Exercism.CSharp.Solutions.ClockExercise
                 newHours += 24;
             }
 
-            this.hours = newHours;
-            this.minutes = newMinutes;
+            _hours = newHours;
+            _minutes = newMinutes;
         }
 
         public Clock Add(int minutesToAdd) =>
-            new Clock(hours, minutes + minutesToAdd);
+            new Clock(_hours, _minutes + minutesToAdd);
 
         public Clock Subtract(int minutesToSubtract) =>
-            new Clock(hours, minutes - minutesToSubtract);
+            new Clock(_hours, _minutes - minutesToSubtract);
 
         public override string ToString() =>
-            $"{hours:00}:{minutes:00}";
+            $"{_hours:00}:{_minutes:00}";
 
         public override bool Equals(object obj) =>
             obj is Clock clock &&
-            hours == clock.hours &&
-            minutes == clock.minutes;
+            _hours == clock._hours &&
+            _minutes == clock._minutes;
 
         public override int GetHashCode() =>
-            HashCode.Combine(hours, minutes);
+            HashCode.Combine(_hours, _minutes);
     }
 }

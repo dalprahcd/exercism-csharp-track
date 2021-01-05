@@ -4,13 +4,13 @@ namespace Exercism.CSharp.Solutions.TournamentExercise
 {
     internal static class TallyStringBuilder
     {
-        private readonly static StringBuilder tallyStringBuilder = new StringBuilder(60);
+        private readonly static StringBuilder _builder = new StringBuilder(60);
 
         internal static string BuildHeader()
         {
-            tallyStringBuilder.Clear();
+            _builder.Clear();
 
-            tallyStringBuilder
+            _builder
                 .Append("Team".PadRight(31))
                 .Append("| MP ")
                 .Append("|  W ")
@@ -18,14 +18,14 @@ namespace Exercism.CSharp.Solutions.TournamentExercise
                 .Append("|  L ")
                 .Append("|  P");
 
-            return tallyStringBuilder.ToString();
+            return _builder.ToString();
         }
 
         internal static string BuildTeam(Team team)
         {
-            tallyStringBuilder.Clear();
+            _builder.Clear();
 
-            tallyStringBuilder
+            _builder
                 .Append(team.Name.PadRight(31))
                 .Append("|  ").Append(team.MatchesPlayed).Append(' ')
                 .Append("|  ").Append(team.Wins).Append(' ')
@@ -33,7 +33,7 @@ namespace Exercism.CSharp.Solutions.TournamentExercise
                 .Append("|  ").Append(team.Losses).Append(' ')
                 .Append("|  ").Append(team.Points);
 
-            return tallyStringBuilder.ToString();
+            return _builder.ToString();
         }
     }
 }
