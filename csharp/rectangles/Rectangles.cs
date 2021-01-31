@@ -30,7 +30,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise
                 {
                     if (text[row][col] == VertexIdentifier)
                     {
-                        yield return new Vertex(row, col);
+                        yield return new Vertex(col, row);
                     }
                 }
             }
@@ -58,10 +58,10 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise
             rectangles.Where(IsValidRectangle);
 
         private static bool IsValidRectangle(this Rectangle rectangle) =>
-            rectangle.One.X == rectangle.Two.X
-            && rectangle.One.Y == rectangle.Three.Y
-            && rectangle.Three.X == rectangle.Four.X
-            && rectangle.Two.Y == rectangle.Four.Y;
+            rectangle.One.Y == rectangle.Two.Y
+            && rectangle.One.X == rectangle.Three.X
+            && rectangle.Three.Y == rectangle.Four.Y
+            && rectangle.Two.X == rectangle.Four.X;
 
         private static bool HasCompleteSides(this Rectangle rectangle, string[] text) =>
             rectangle.IsTopValid(text)
@@ -71,10 +71,15 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise
 
         private static bool IsTopValid(this Rectangle rectangle, string[] text)
         {
-            if (rectangle.One.X - rectangle.Two.X > 0)
+            var length = rectangle.Two.X - rectangle.One.X;
+            if (length > 0)
             {
                 var row = rectangle.One.Y;
-                return text[row].All(c => c == TopBottomIdentifier);
+
+                return text[row]
+                .Skip(rectangle.One.X + 1)
+                .Take(length - 1)
+                .All(c => c == TopBottomIdentifier || c == VertexIdentifier);
             }
             else
             {
@@ -84,10 +89,15 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise
 
         private static bool IsBottomValid(this Rectangle rectangle, string[] text)
         {
-            if (rectangle.Three.X - rectangle.Four.X > 0)
+            var length = rectangle.Four.X - rectangle.Three.X;
+            if (length > 0)
             {
-                var row = rectangle.One.Y;
-                return text[row].All(c => c == TopBottomIdentifier);
+                var row = rectangle.Three.Y;
+
+                return text[row]
+                .Skip(rectangle.Three.X + 1)
+                .Take(length - 1)
+                .All(c => c == TopBottomIdentifier || c == VertexIdentifier);
             }
             else
             {
@@ -97,11 +107,16 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise
 
         private static bool IsLeftSideValid(this Rectangle rectangle, string[] text)
         {
-            if (rectangle.One.Y - rectangle.Three.Y > 0)
+            var length = rectangle.Three.Y - rectangle.One.Y;
+            if (length > 0)
             {
-                var col = rectangle.One.Y;
+                var col = rectangle.One.X;
 
-                return text.Select(row => row[col]).All(c => c == SidesIdentifier);
+                return text
+                .Select(row => row[col])
+                .Skip(rectangle.One.Y + 1)
+                .Take(length - 1)
+                .All(c => c == SidesIdentifier || c == VertexIdentifier);
             }
             else
             {
@@ -111,11 +126,16 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise
 
         private static bool IsRightSideValid(this Rectangle rectangle, string[] text)
         {
-            if (rectangle.Two.Y - rectangle.Four.Y > 0)
+            var length = rectangle.Four.Y - rectangle.Two.Y;
+            if (length > 0)
             {
-                var col = rectangle.Two.Y;
+                var col = rectangle.Two.X;
 
-                return text.Select(row => row[col]).All(c => c == SidesIdentifier);
+                return text
+                .Select(row => row[col])
+                .Skip(rectangle.Two.Y + 1)
+                .Take(length - 1)
+                .All(c => c == SidesIdentifier || c == VertexIdentifier);
             }
             else
             {
