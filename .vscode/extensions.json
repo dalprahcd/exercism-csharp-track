@@ -11,7 +11,8 @@
 		"ms-vscode.cpptools",
 		"vscode-icons-team.vscode-icons",
 		"SonarSource.sonarlint-vscode",
-		"RobbOwen.synthwave-vscode"
+		"RobbOwen.synthwave-vscode",
+		"streetsidesoftware.code-spell-checker"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
