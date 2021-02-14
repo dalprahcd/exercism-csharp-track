@@ -20,7 +20,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             var strings = new[]
             {
             ""
-        };
+            };
             Assert.Equal(0, Rectangles.Count(strings));
         }
 
@@ -30,7 +30,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             var strings = new[]
             {
             " "
-        };
+            };
             Assert.Equal(0, Rectangles.Count(strings));
         }
 
@@ -42,7 +42,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+-+",
             "| |",
             "+-+"
-        };
+            };
             Assert.Equal(1, Rectangles.Count(strings));
         }
 
@@ -56,7 +56,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+-+-+",
             "| |  ",
             "+-+  "
-        };
+            };
             Assert.Equal(2, Rectangles.Count(strings));
         }
 
@@ -70,7 +70,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+-+-+",
             "| | |",
             "+-+-+"
-        };
+            };
             Assert.Equal(5, Rectangles.Count(strings));
         }
 
@@ -81,7 +81,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             {
             "+--+",
             "+--+"
-        };
+            };
             Assert.Equal(1, Rectangles.Count(strings));
         }
 
@@ -93,7 +93,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "++",
             "||",
             "++"
-        };
+            };
             Assert.Equal(1, Rectangles.Count(strings));
         }
 
@@ -104,7 +104,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             {
             "++",
             "++"
-        };
+            };
             Assert.Equal(1, Rectangles.Count(strings));
         }
 
@@ -118,7 +118,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+-+-+",
             "| | -",
             "+-+-+"
-        };
+            };
             Assert.Equal(1, Rectangles.Count(strings));
         }
 
@@ -132,7 +132,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+---+--+    |",
             "|   |       |",
             "+---+-------+"
-        };
+            };
             Assert.Equal(3, Rectangles.Count(strings));
         }
 
@@ -146,7 +146,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+------+    |",
             "|   |       |",
             "+---+-------+"
-        };
+            };
             Assert.Equal(2, Rectangles.Count(strings));
         }
 
@@ -163,7 +163,7 @@ namespace Exercism.CSharp.Solutions.RectanglesExercise.Tests
             "+---+--+--+-+",
             "+------+  | |",
             "          +-+"
-        };
+            };
             Assert.Equal(60, Rectangles.Count(strings));
         }
     }
