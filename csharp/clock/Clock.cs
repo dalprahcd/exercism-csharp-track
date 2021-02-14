@@ -2,10 +2,10 @@ using System;
 
 namespace Exercism.CSharp.Solutions.ClockExercise
 {
-    public class Clock
+    public class Clock : IEquatable<Clock>
     {
-        private readonly int _hours;
-        private readonly int _minutes;
+        private readonly int hours;
+        private readonly int minutes;
 
         public Clock(int hours, int minutes)
         {
@@ -23,25 +23,37 @@ namespace Exercism.CSharp.Solutions.ClockExercise
                 newHours += 24;
             }
 
-            _hours = newHours;
-            _minutes = newMinutes;
+            this.hours = newHours;
+            this.minutes = newMinutes;
         }
 
         public Clock Add(int minutesToAdd) =>
-            new Clock(_hours, _minutes + minutesToAdd);
+            new Clock(hours, minutes + minutesToAdd);
 
         public Clock Subtract(int minutesToSubtract) =>
-            new Clock(_hours, _minutes - minutesToSubtract);
+            new Clock(hours, minutes - minutesToSubtract);
 
         public override string ToString() =>
-            $"{_hours:00}:{_minutes:00}";
+            $"{hours:00}:{minutes:00}";
+
+        public bool Equals(Clock other)
+        {
+            if (other is null) { return false; }
+            if (ReferenceEquals(this, other)) { return true; }
+
+            return hours == other.hours && minutes == other.minutes;
+        }
 
         public override bool Equals(object obj) =>
-            obj is Clock clock &&
-            _hours == clock._hours &&
-            _minutes == clock._minutes;
+            Equals(obj as Clock);
 
         public override int GetHashCode() =>
-            HashCode.Combine(_hours, _minutes);
+            HashCode.Combine(hours, minutes);
+
+        public static bool operator ==(Clock clock1, Clock clock2) =>
+            clock1.Equals(clock2);
+
+        public static bool operator !=(Clock clock1, Clock clock2) =>
+            !(clock1 == clock2);
     }
 }
