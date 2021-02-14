@@ -39,4 +39,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
-

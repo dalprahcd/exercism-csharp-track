@@ -6,7 +6,7 @@ The matrix should be filled with natural numbers, starting from 1
 in the top-left corner, increasing in an inward, clockwise spiral order,
 like these examples:
 
-###### Spiral matrix of size 3
+## Spiral matrix of size 3
 
 ```text
 1 2 3
@@ -14,7 +14,7 @@ like these examples:
 7 6 5
 ```
 
-###### Spiral matrix of size 4
+## Spiral matrix of size 4
 
 ```text
  1  2  3 4
@@ -40,4 +40,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension. [https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/](https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/)
-

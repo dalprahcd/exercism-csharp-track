@@ -34,4 +34,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 A variation on a famous interview question intended to weed out potential candidates. [http://jumpstartlab.com](http://jumpstartlab.com)
-

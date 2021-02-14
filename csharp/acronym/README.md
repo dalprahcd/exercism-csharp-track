@@ -24,4 +24,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Julien Vanier [https://github.com/monkbroc](https://github.com/monkbroc)
-

@@ -32,4 +32,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
-

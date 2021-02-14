@@ -50,4 +50,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
-

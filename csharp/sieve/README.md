@@ -46,4 +46,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Sieve of Eratosthenes at Wikipedia [http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
-

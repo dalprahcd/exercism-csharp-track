@@ -31,4 +31,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
-

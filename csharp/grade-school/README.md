@@ -51,4 +51,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
-

@@ -23,10 +23,8 @@ the decryption function is:
   `D(y) = a^-1(y - b) mod m`
 
 - where `y` is the numeric value of an encrypted letter, ie. `y = E(x)`
-- it is important to note that `a^-1` is the modular multiplicative inverse
-     of `a mod m`
-- the modular multiplicative inverse of `a` only exists if `a` and `m` are
-     coprime.
+- it is important to note that `a^-1` is the modular multiplicative inverse of `a mod m`
+- the modular multiplicative inverse of `a` only exists if `a` and `m` are coprime.
 
 To find the MMI of `a`:
 

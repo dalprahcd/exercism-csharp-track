@@ -34,4 +34,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
-

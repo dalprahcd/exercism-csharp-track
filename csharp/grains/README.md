@@ -12,6 +12,7 @@ of grains doubling on each successive square.
 There are 64 squares on a chessboard (where square 1 has one grain, square 2 has two grains, and so on).
 
 Write code that shows:
+
 - how many grains were on a given square, and
 - the total number of grains on the chessboard
 
@@ -43,4 +44,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 JavaRanch Cattle Drive, exercise 6 [http://www.javaranch.com/grains.jsp](http://www.javaranch.com/grains.jsp)
-

@@ -18,7 +18,6 @@ Make sure you have read the "Guides" section of the
 the basic information on setting up the development environment expected
 by the exercises.
 
-
 ## Passing the Tests
 
 Get the first test compiling, linking and passing by following the [three
@@ -47,4 +46,5 @@ low-level algorithms or facilities by hand.
 Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikipedia.org/wiki/Narcissistic_number)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

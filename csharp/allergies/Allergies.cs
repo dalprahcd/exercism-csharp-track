@@ -20,18 +20,18 @@ namespace Exercism.CSharp.Solutions.AllergiesExercise
 
     public class Allergies
     {
-        private readonly Allergen _allergies;
+        private readonly Allergen allergies;
 
         public Allergies(int mask) =>
-            _allergies = (Allergen)mask;
+            allergies = (Allergen)mask;
 
         public bool IsAllergicTo(Allergen allergen) =>
-            (_allergies & allergen) == allergen;
+            (allergies & allergen) == allergen;
 
         public IEnumerable<Allergen> List() =>
             Enum.GetValues(typeof(Allergen))
                 .Cast<Allergen>()
-                .Where(a => a != Allergen.None && (_allergies & a) == a)
+                .Where(a => a != Allergen.None && (allergies & a) == a)
                 .DefaultIfEmpty(Allergen.None);
     }
 }

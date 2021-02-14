@@ -58,4 +58,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Tyler Long
-

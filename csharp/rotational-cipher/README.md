@@ -47,4 +47,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Caesar_cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
-

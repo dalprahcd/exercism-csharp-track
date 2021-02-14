@@ -6,15 +6,15 @@ namespace Exercism.CSharp.Solutions.AnagramExercise
 {
     public class Anagram
     {
-        private readonly string _word;
+        private readonly string word;
 
-        public Anagram(string baseWord) => _word = baseWord.ToLower();
+        public Anagram(string baseWord) => word = baseWord.ToLower();
 
         public IEnumerable<string> FindAnagrams(IEnumerable<string> potentialMatches)
         {
             foreach (var word in potentialMatches)
             {
-                if (IsAnagram(_word, word.ToLower()))
+                if (IsAnagram(this.word, word.ToLower()))
                 {
                     yield return word;
                 }

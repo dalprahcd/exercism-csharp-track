@@ -5,7 +5,7 @@ namespace Exercism.CSharp.Solutions.ScrabbleScoreExercise
 {
     public static class ScrabbleScore
     {
-        private static readonly Dictionary<char,int> _letterScore = new Dictionary<char, int>
+        private static readonly Dictionary<char,int> letterScore = new Dictionary<char, int>
         {
             ['a'] = 1,
             ['b'] = 3,
@@ -38,6 +38,6 @@ namespace Exercism.CSharp.Solutions.ScrabbleScoreExercise
         public static int Score(string input) =>
             input
                 .ToLower()
-                .Sum(c => _letterScore[c]);
+                .Sum(c => letterScore[c]);
     }
 }

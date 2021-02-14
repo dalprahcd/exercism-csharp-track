@@ -23,7 +23,7 @@ phenomenon, go watch [this youtube video][video].
 
 [video]: http://www.youtube.com/watch?v=xX96xng7sAE
 
-## Notes
+## Notes DateTime
 
 The DateTime class in C# provides a built-in [IsLeapYear](https://msdn.microsoft.com/en-us/library/system.datetime.isleapyear(v=vs.110).aspx) method
 which you should pretend doesn't exist for the purposes of implementing this exercise.
@@ -45,4 +45,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 JavaRanch Cattle Drive, exercise 3 [http://www.javaranch.com/leap.jsp](http://www.javaranch.com/leap.jsp)
-

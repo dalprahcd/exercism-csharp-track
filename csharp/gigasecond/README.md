@@ -22,4 +22,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
-

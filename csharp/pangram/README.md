@@ -25,4 +25,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Pangram](https://en.wikipedia.org/wiki/Pangram)
-

@@ -5,7 +5,7 @@ namespace Exercism.CSharp.Solutions.TwelveDaysExercise
 {
     public static class TwelveDays
     {
-        private static readonly string[] _days =
+        private static readonly string[] days =
         {
             "first",
             "second",
@@ -21,7 +21,7 @@ namespace Exercism.CSharp.Solutions.TwelveDaysExercise
             "twelfth"
         };
 
-        private static readonly string[] _presents =
+        private static readonly string[] presents =
         {
             " and a Partridge in a Pear Tree.",
             " two Turtle Doves,",
@@ -55,7 +55,7 @@ namespace Exercism.CSharp.Solutions.TwelveDaysExercise
 
             for (int i = verseNumber - 1; i >= 0; i--)
             {
-                builder.Append(_presents[i]);
+                builder.Append(presents[i]);
             }
 
             return builder.ToString();
@@ -84,6 +84,6 @@ namespace Exercism.CSharp.Solutions.TwelveDaysExercise
             Header(0) + " a Partridge in a Pear Tree.";
 
         private static string Header(int day) =>
-            "On the " + _days[day] + " day of Christmas my true love gave to me:";
+            "On the " + days[day] + " day of Christmas my true love gave to me:";
     }
 }

@@ -76,4 +76,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartlab.com)
-

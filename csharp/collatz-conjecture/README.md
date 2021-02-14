@@ -32,7 +32,7 @@ To run the tests, run the command `dotnet test` from within the exercise directo
 
 Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
 Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
+Once none of the tests are skipped and they are all passing, you can submit your solution
 using `exercism submit CollatzConjecture.cs`
 
 ## Further information
@@ -43,4 +43,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 An unsolved problem in mathematics named after mathematician Lothar Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
-

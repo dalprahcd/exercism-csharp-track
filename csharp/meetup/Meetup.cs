@@ -16,16 +16,16 @@ namespace Exercism.CSharp.Solutions.MeetupExercise
 
     public class Meetup
     {
-        private readonly IEnumerable<DateTime> _monthDays;
+        private readonly IEnumerable<DateTime> monthDays;
 
         public Meetup(int month, int year) =>
-            _monthDays = Enumerable
+            monthDays = Enumerable
                             .Range(1, DateTime.DaysInMonth(year, month))
                             .Select(day => new DateTime(year, month, day));
 
         public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule)
         {
-            var eligibleDays = _monthDays.Where(date => date.DayOfWeek == dayOfWeek);
+            var eligibleDays = monthDays.Where(date => date.DayOfWeek == dayOfWeek);
 
             return schedule switch
             {

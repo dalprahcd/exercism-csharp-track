@@ -17,9 +17,9 @@ first principles; research is allowed, indeed, encouraged. Finding the best
 algorithm for the problem is a key skill in software engineering.
 
 ## Hints
+
 This exercise requires you to process a collection of data. You can simplify your code by using LINQ (Language Integrated Query).
-For more information, see [this page]
-(https://docs.microsoft.com/en-us/dotnet/articles/standard/using-linq).
+For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/articles/standard/using-linq).
 
 ## Running the tests
 
@@ -38,4 +38,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
-

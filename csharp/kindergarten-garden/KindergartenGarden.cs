@@ -30,10 +30,10 @@ namespace Exercism.CSharp.Solutions.KindergartenGardenExercise
 
     public class KindergartenGarden
     {
-        private readonly string[] _rows;
+        private readonly string[] rows;
 
         public KindergartenGarden(string diagram) =>
-            _rows = diagram.Split(new[] { "\n" }, StringSplitOptions.None);
+            rows = diagram.Split(new[] { "\n" }, StringSplitOptions.None);
 
         public IEnumerable<Plant> Plants(string student)
         {
@@ -43,14 +43,14 @@ namespace Exercism.CSharp.Solutions.KindergartenGardenExercise
             }
 
             int start = (int)enumStudent;
-            if (_rows.Any(r => r.Length < start + 2))
+            if (rows.Any(r => r.Length < start + 2))
             {
                 return Array.Empty<Plant>();
             }
 
             List<Plant> output = new List<Plant>();
 
-            foreach (var row in _rows)
+            foreach (var row in rows)
             {
                 output.AddRange(row
                                 .Skip(start)

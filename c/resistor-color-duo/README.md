@@ -8,24 +8,22 @@ To get around this problem, manufacturers print color-coded bands onto the resis
 
 In this exercise you are going to create a helpful program so that you don't have to remember the values of the bands. The program will take color names as input and output a two digit number, even if the input is more than two colors!
 
-
 The band colors are encoded as follows:
 
-- Black: 0
-- Brown: 1
-- Red: 2
-- Orange: 3
-- Yellow: 4
-- Green: 5
-- Blue: 6
-- Violet: 7
-- Grey: 8
-- White: 9
+* Black: 0
+* Brown: 1
+* Red: 2
+* Orange: 3
+* Yellow: 4
+* Green: 5
+* Blue: 6
+* Violet: 7
+* Grey: 8
+* White: 9
 
 From the example above:
 brown-green should return 15
 brown-green-violet should return 15 too, ignoring the third color.
-
 
 ## Getting Started
 
@@ -33,7 +31,6 @@ Make sure you have read the "Guides" section of the
 [C track](https://exercism.io/my/tracks/c) on the Exercism site. This covers
 the basic information on setting up the development environment expected
 by the exercises.
-
 
 ## Passing the Tests
 
@@ -63,4 +60,5 @@ low-level algorithms or facilities by hand.
 Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1464](https://github.com/exercism/problem-specifications/issues/1464)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

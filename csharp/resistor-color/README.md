@@ -36,4 +36,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1458](https://github.com/exercism/problem-specifications/issues/1458)
-

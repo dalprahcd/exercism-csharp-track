@@ -40,4 +40,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
-

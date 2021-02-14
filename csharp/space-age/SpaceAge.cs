@@ -15,31 +15,31 @@ namespace Exercism.CSharp.Solutions.SpaceAgeExercise
             public const double Neptune             = 164.79132d;
         }
 
-        private readonly double _livedEarthYears;
+        private readonly double livedEarthYears;
 
         public SpaceAge(int seconds) =>
-            _livedEarthYears = seconds / EarthYearInSeconds;
+            livedEarthYears = seconds / EarthYearInSeconds;
 
-        public double OnEarth() => _livedEarthYears;
+        public double OnEarth() => livedEarthYears;
 
         public double OnMercury() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Mercury;
+            livedEarthYears / OrbitalPeriodInEarthYears.Mercury;
 
         public double OnVenus() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Venus;
+            livedEarthYears / OrbitalPeriodInEarthYears.Venus;
 
         public double OnMars() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Mars;
+            livedEarthYears / OrbitalPeriodInEarthYears.Mars;
 
         public double OnJupiter() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Jupiter;
+            livedEarthYears / OrbitalPeriodInEarthYears.Jupiter;
         public double OnSaturn() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Saturn;
+            livedEarthYears / OrbitalPeriodInEarthYears.Saturn;
 
         public double OnUranus() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Uranus;
+            livedEarthYears / OrbitalPeriodInEarthYears.Uranus;
 
         public double OnNeptune() =>
-            _livedEarthYears / OrbitalPeriodInEarthYears.Neptune;
+            livedEarthYears / OrbitalPeriodInEarthYears.Neptune;
     }
 }

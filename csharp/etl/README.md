@@ -1,8 +1,8 @@
-# ETL
+# ETL Exercise
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
-### ETL
+## ETL
 
 Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so
 we're going to migrate this."
@@ -63,4 +63,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 The Jumpstart Lab team [http://jumpstartlab.com](http://jumpstartlab.com)
-

@@ -7,9 +7,9 @@ namespace Exercism.CSharp.Solutions.DartsExercise
         private struct Points
         {
             public const int Outside        = 0;
-            public const int OuterCircle   = 1;
-            public const int MiddleCircle  = 5;
-            public const int InnerCircle   = 10;
+            public const int OuterCircle    = 1;
+            public const int MiddleCircle   = 5;
+            public const int InnerCircle    = 10;
         }
 
         private struct Radius

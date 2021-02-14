@@ -6,7 +6,7 @@ namespace Exercism.CSharp.Solutions.MatrixExercise
 {
     public class Matrix
     {
-        private readonly int[][] _matrix;
+        private readonly int[][] matrix;
 
         public Matrix(string input)
         {
@@ -15,19 +15,19 @@ namespace Exercism.CSharp.Solutions.MatrixExercise
                 throw new ArgumentNullException(nameof(input));
             }
 
-            _matrix = ParseMatrix(input);
+            matrix = ParseMatrix(input);
         }
 
-        public int Rows => _matrix.GetLength(0);
+        public int Rows => matrix.GetLength(0);
 
-        public int Cols => _matrix.GetLength(1);
+        public int Cols => matrix.GetLength(1);
 
-        public IEnumerable<int> Row(int row) => _matrix[row - 1];
+        public IEnumerable<int> Row(int row) => matrix[row - 1];
 
         public IEnumerable<int> Column(int col) =>
             Enumerable
                 .Range(0, Rows)
-                .Select(row => _matrix[row][col - 1]);
+                .Select(row => matrix[row][col - 1]);
 
         private int[][] ParseMatrix(string input)
         {

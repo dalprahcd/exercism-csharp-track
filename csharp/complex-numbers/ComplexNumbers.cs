@@ -4,53 +4,53 @@ namespace Exercism.CSharp.Solutions.ComplexNumberExercise
 {
     public struct ComplexNumber
     {
-        private readonly double _real;
+        private readonly double real;
 
-        private readonly double _img;
+        private readonly double img;
 
-        public ComplexNumber(double real, double imaginary)
+        public ComplexNumber(double real, double img)
         {
-            _real = real;
-            _img = imaginary;
+            this.real = real;
+            this.img = img;
         }
 
-        public double Real() => _real;
+        public double Real() => real;
 
-        public double Imaginary() => _img;
+        public double Imaginary() => img;
 
         public ComplexNumber Mul(ComplexNumber other)
         {
-            var real = (_real * other._real) - (_img * other._img);
-            var img = (_img * other._real) + (_real * other._img);
+            var real = (this.real * other.real) - (this.img * other.img);
+            var img = (this.img * other.real) + (this.real * other.img);
 
             return new ComplexNumber(real, img);
         }
 
         public ComplexNumber Add(ComplexNumber other) =>
-            new ComplexNumber(_real + other._real, _img + other._img);
+            new ComplexNumber(real + other.real, img + other.img);
 
         public ComplexNumber Sub(ComplexNumber other) =>
-            new ComplexNumber(_real - other._real, _img - other._img);
+            new ComplexNumber(real - other.real, img - other.img);
 
         public ComplexNumber Div(ComplexNumber other)
         {
-            var div = (other._real * other._real) + (other._img * other._img);
-            var real = (_real * other._real) + (_img * other._img);
-            var img = (_img * other._real) - (_real * other._img);
+            var div = (other.real * other.real) + (other.img * other.img);
+            var real = (this.real * other.real) + (this.img * other.img);
+            var img = (this.img * other.real) - (this.real * other.img);
 
             return new ComplexNumber(real / div, img / div);
         }
 
-        public double Abs() => Math.Sqrt((_real * _real) + (_img * _img));
+        public double Abs() => Math.Sqrt((real * real) + (img * img));
 
         public ComplexNumber Conjugate() =>
-            new ComplexNumber(_real, -_img);
+            new ComplexNumber(real, -img);
 
         public ComplexNumber Exp()
         {
-            var factor = Math.Exp(_real);
-            var real = factor * Math.Cos(_img);
-            var img = factor * Math.Sin(_img);
+            var factor = Math.Exp(this.real);
+            var real = factor * Math.Cos(this.img);
+            var img = factor * Math.Sin(this.img);
 
             return new ComplexNumber(real, img);
         }

@@ -27,9 +27,9 @@ it.
 Have fun!
 
 ## Hints
-This exercise requires you to handle data related to currency and money. A normal approuch is to use the [Decimal](https://msdn.microsoft.com/en-US/library/system.decimal.aspx) struct to store currency values. 
-Note though that you then only store the numeric value of a currency. 
 
+This exercise requires you to handle data related to currency and money. A normal approuch is to use the [Decimal](https://msdn.microsoft.com/en-US/library/system.decimal.aspx) struct to store currency values.
+Note though that you then only store the numeric value of a currency.
 
 ## Running the tests
 
@@ -44,4 +44,3 @@ using `exercism submit BankAccount.cs`
 
 For more detailed information about the C# track, including how to get help if
 you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-

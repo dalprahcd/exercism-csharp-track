@@ -16,6 +16,7 @@ These colors are encoded as follows:
 - White: 9
 
 The goal of this exercise is to create a way:
+
 - to look up the numerical value associated with a particular color band
 - to list the different band colors
 
@@ -29,7 +30,6 @@ Make sure you have read the "Guides" section of the
 [C track](https://exercism.io/my/tracks/c) on the Exercism site. This covers
 the basic information on setting up the development environment expected
 by the exercises.
-
 
 ## Passing the Tests
 
@@ -59,4 +59,5 @@ low-level algorithms or facilities by hand.
 Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1458](https://github.com/exercism/problem-specifications/issues/1458)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

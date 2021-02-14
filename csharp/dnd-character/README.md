@@ -49,4 +49,3 @@ you're having trouble, please visit the exercism.io [C# language page](http://ex
 ## Source
 
 Simon Shine, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945](https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945)
-

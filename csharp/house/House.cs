@@ -6,7 +6,7 @@ namespace Exercism.CSharp.Solutions.HouseExercise
     public static class House
     {
         private const string Header = "This is";
-        private static readonly string[] _verses =
+        private static readonly string[] verses =
         {
             " the house that Jack built.",
             " the malt that lay in",
@@ -34,7 +34,7 @@ namespace Exercism.CSharp.Solutions.HouseExercise
 
             for (int i = verseNumber - 1; i >= 0; i--)
             {
-                builder.Append(_verses[i]);
+                builder.Append(verses[i]);
             }
 
             return builder.ToString();
