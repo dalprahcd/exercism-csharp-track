@@ -30,8 +30,8 @@ namespace Exercism.CSharp.Solutions.DiffieHellmanExercise
                 bytes[^1] &= 0x7F;
 
                 R = new BigInteger(bytes);
-
-            } while (R >= N);
+            }
+            while (R >= N);
 
             return R;
         }
