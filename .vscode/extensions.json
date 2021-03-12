@@ -4,15 +4,15 @@
 
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"DavidAnson.vscode-markdownlint",
-		"josefpihrt-vscode.roslynator",
-		"ms-dotnettools.csharp",
-		"ms-python.python",
 		"ms-vscode.cpptools",
-		"vscode-icons-team.vscode-icons",
-		"SonarSource.sonarlint-vscode",
-		"RobbOwen.synthwave-vscode",
-		"streetsidesoftware.code-spell-checker"
+		"ms-dotnettools.csharp",
+		"josefpihrt-vscode.roslynator",
+		"DavidAnson.vscode-markdownlint",
+		"ms-python.python",
+		"streetsidesoftware.code-spell-checker",
+		"dart-code.flutter",
+		"pkief.material-icon-theme",
+		"sdras.night-owl"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
