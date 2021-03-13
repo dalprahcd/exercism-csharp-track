@@ -3,9 +3,5 @@
     "files.autoSaveDelay": 300,
     "cSpell.words": [
         "Exercism"
-    ],
-    "files.associations": {
-        "cmath": "c",
-        "resistor_color_trio.h": "c"
-    }
+    ]
 }
