@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/exercism,visualstudiocode,c,c++,csharp,python,dart,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=exercism,visualstudiocode,c,c++,csharp,python,dart,yarn
+# Created by https://www.toptal.com/developers/gitignore/api/exercism,visualstudiocode,c,c++,cmake,csharp,python,dart,yarn
+# Edit at https://www.toptal.com/developers/gitignore?templates=exercism,visualstudiocode,c,c++,cmake,csharp,python,dart,yarn
 
 ### C ###
 # Prerequisites
@@ -78,6 +78,24 @@ dkms.conf
 *.lai
 
 # Executables
+
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
+
+### CMake Patch ###
+# External projects
+*-prefix/
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -639,4 +657,4 @@ Thumbs.db #thumbnail cache on Windows
 # and uncomment the following lines
 # .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/exercism,visualstudiocode,c,c++,csharp,python,dart,yarn
+# End of https://www.toptal.com/developers/gitignore/api/exercism,visualstudiocode,c,c++,cmake,csharp,python,dart,yarn
