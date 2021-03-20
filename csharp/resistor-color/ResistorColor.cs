@@ -26,9 +26,8 @@ namespace Exercism.CSharp.Solutions.ResistorColorExercise
         }
 
         public static string[] Colors() =>
-            Enum
-            .GetNames(typeof(ResistorBands))
-            .Select(s => s.ToLower())
-            .ToArray();
+            Enum.GetNames(typeof(ResistorBands))
+                .Select(s => s.ToLower())
+                .ToArray();
     }
 }

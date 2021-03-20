@@ -14,14 +14,11 @@ namespace Exercism.CSharp.Solutions.BobExercise
 
             statement = statement.Trim();
 
-            if (statement.IsShouting())
-            {
-                return statement.IsQuestion()
-                            ? "Calm down, I know what I'm doing!"
-                            : "Whoa, chill out!";
-            }
-
-            return statement.IsQuestion()
+            return statement.IsShouting()
+                ? statement.IsQuestion()
+                    ? "Calm down, I know what I'm doing!"
+                    : "Whoa, chill out!"
+                : statement.IsQuestion()
                     ? "Sure."
                     : "Whatever.";
         }

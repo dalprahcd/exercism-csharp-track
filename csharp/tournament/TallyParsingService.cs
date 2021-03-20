@@ -13,14 +13,12 @@ namespace Exercism.CSharp.Solutions.TournamentExercise
             return CorrectOrder(tallyResult);
         }
 
-        private static List<Team> CorrectOrder(Dictionary<string, Team> tallyResult)
-        {
-            return tallyResult
-                    .Values
-                    .OrderByDescending(t => t.Points)
-                    .ThenBy(t => t.Name)
-                    .ToList();
-        }
+        private static List<Team> CorrectOrder(Dictionary<string, Team> tallyResult) =>
+            tallyResult
+                .Values
+                .OrderByDescending(t => t.Points)
+                .ThenBy(t => t.Name)
+                .ToList();
 
         private static Dictionary<string, Team> ComputeTallyResult(IEnumerable<string> lines)
         {

@@ -6,7 +6,7 @@ namespace Exercism.CSharp.Solutions.ProteinTranslationExercise
     public static class ProteinTranslation
     {
         private const int Size = 3;
-        private static readonly Dictionary<string, string> _translations = new Dictionary<string, string>
+        private static readonly Dictionary<string, string> translations = new Dictionary<string, string>
         {
             ["AUG"] = "Methionine",
             ["UUU"] = "Phenylalanine",
@@ -31,7 +31,7 @@ namespace Exercism.CSharp.Solutions.ProteinTranslationExercise
             Enumerable
                 .Range(0, strand.Length / Size)
                 .Select(i => strand.Substring(i * Size, Size))
-                .Select(s => _translations[s])
+                .Select(s => translations[s])
                 .TakeWhile(s => s != "STOP");
     }
 }

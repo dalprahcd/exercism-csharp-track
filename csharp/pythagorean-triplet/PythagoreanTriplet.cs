@@ -15,6 +15,7 @@ namespace Exercism.CSharp.Solutions.PythagoreanTripletExercise
                 for (int b = a + 1; b <= sum / 2; b++)
                 {
                     int c = sum - a - b;
+
                     if (IsPythagorean(a, b, c))
                     {
                         yield return (a, b, c);

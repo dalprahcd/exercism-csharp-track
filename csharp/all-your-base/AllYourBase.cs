@@ -9,14 +9,13 @@ namespace Exercism.CSharp.Solutions.AllYourBaseExercise
         public static IEnumerable<int> Rebase(int inputBase, int[] inputDigits, int outputBase) =>
             inputBase < 2 || outputBase < 2 || inputDigits.Any(n => n < 0 || n >= inputBase)
                 ? throw new ArgumentException()
-                : Deconstruct(outputBase, Contruct(inputBase, inputDigits))
+                : Deconstruct(outputBase, Construct(inputBase, inputDigits))
                     .DefaultIfEmpty()
                     .Reverse();
 
-        private static int Contruct(int inputBase, int[] inputDigits)
+        private static int Construct(int inputBase, int[] inputDigits)
         {
-            int factor = 0;
-            int output = 0;
+            int factor = 0, output = 0;
 
             for (int i = inputDigits.Length - 1; i >= 0; i--)
             {

@@ -1,7 +1,7 @@
 #include "armstrong_numbers.h"
+#include "math.h"
 
 static int count_digits(int number);
-static int power(int value, int factor);
 
 bool is_armstrong_number(int candidate)
 {
@@ -12,7 +12,7 @@ bool is_armstrong_number(int candidate)
 
     while (digits--)
     {
-        result += power(candidate % 10 , factor);
+        result += pow(candidate % 10 , factor);
         candidate /= 10;
     }
     
@@ -24,15 +24,4 @@ static int count_digits(int number)
     int digits = 1;
     while (number/=10) { digits++; }
     return digits;
-}
-
-static int power(int value, int factor)
-{
-    int result = 1;
-    for (int i = 0; i < factor; i++)
-    {
-        result *= value;
-    }
-
-    return result;
 }

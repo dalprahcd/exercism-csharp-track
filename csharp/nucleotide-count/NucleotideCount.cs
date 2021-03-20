@@ -10,7 +10,7 @@ namespace Exercism.CSharp.Solutions.NucleotideCountExercise
 
         public static IDictionary<char, int> Count(string sequence)
         {
-            if (sequence == null)
+            if (sequence is null)
             {
                 throw new ArgumentNullException(nameof(sequence));
             }

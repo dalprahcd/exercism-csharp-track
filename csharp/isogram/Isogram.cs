@@ -7,7 +7,7 @@ namespace Exercism.CSharp.Solutions.IsogramExercise
     {
         public static bool IsIsogram(string word)
         {
-            if (word == null)
+            if (word is null)
             {
                 return false;
             }

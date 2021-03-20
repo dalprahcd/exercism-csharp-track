@@ -128,7 +128,8 @@ namespace Exercism.CSharp.Solutions.PokerExercise
         {
             var orderedRanks = cardRanks.OrderBy(rank => rank);
 
-            return orderedRanks.SequenceEqual(new[] { CardRanks.Two, CardRanks.Three, CardRanks.Four, CardRanks.Five, CardRanks.Ace });
+            return orderedRanks
+                .SequenceEqual(new[] { CardRanks.Two, CardRanks.Three, CardRanks.Four, CardRanks.Five, CardRanks.Ace });
         }
     }
 }

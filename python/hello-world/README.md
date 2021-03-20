@@ -14,7 +14,6 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to

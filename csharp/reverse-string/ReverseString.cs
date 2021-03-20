@@ -7,7 +7,7 @@ namespace Exercism.CSharp.Solutions.ResistorColorExercise
     {
         public static string Reverse(string input) =>
             input is null
-            ? throw new ArgumentNullException(nameof(input))
-            : new string(input.Reverse().ToArray());
+                ? throw new ArgumentNullException(nameof(input))
+                : new string(input.Reverse().ToArray());
     }
 }

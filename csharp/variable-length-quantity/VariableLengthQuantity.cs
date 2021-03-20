@@ -15,12 +15,9 @@ namespace Exercism.CSharp.Solutions.VariableLengthQuantityExercise
 
             // Last byte has not a high bit clear,
             // Incomplete sequence
-            if ((last & 0x80u) != 0)
-            {
-                throw new InvalidOperationException("Incomplete encoded sequence");
-            }
-
-            return Combine(bytes);
+            return (last & 0x80u) != 0
+                    ? throw new InvalidOperationException("Incomplete encoded sequence")
+                    : Combine(bytes);
         }
 
         private static IEnumerable<uint> Encode(uint number)
