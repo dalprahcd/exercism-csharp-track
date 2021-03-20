@@ -1,22 +1,13 @@
 ﻿using System;
-//using System.Linq;
+using System.Linq;
 
 namespace Exercism.CSharp.Solutions.ResistorColorExercise
 {
     public static class ReverseString
     {
-        public static string Reverse(string input)
-        {
-            if (input == null)
-            {
-                throw new ArgumentNullException(nameof(input));
-            }
-
-            char[] reversed = input.ToCharArray();
-            Array.Reverse(reversed);
-            return new string(reversed);
-
-            //return new string(input.Reverse().ToArray());
-        }
+        public static string Reverse(string input) =>
+            input is null
+            ? throw new ArgumentNullException(nameof(input))
+            : new string(input.Reverse().ToArray());
     }
 }
