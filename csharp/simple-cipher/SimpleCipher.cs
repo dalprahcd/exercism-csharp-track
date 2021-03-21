@@ -13,7 +13,7 @@ namespace Exercism.CSharp.Solutions.SimpleCipherExercise
 
             rotate = Enumerable
                         .Range(0, 100)
-                        .Select(_ => rnd.Next(0, 25))
+                        .Select(_ => rnd.Next(0, 'z' - 'a'))
                         .ToArray();
 
             Key = new string(rotate.Select(i => (char)('a' + i)).ToArray());

@@ -7,6 +7,7 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
 {
     public class Robot
     {
+        private static readonly Random rnd = new Random();
         private static readonly HashSet<string> allPossibleNames = GetAllPossibleNames();
         private static readonly HashSet<string> takenNames = new HashSet<string>();
 
@@ -23,17 +24,24 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise
 
             if (takenNames.Count == 0)
             {
-                Name = allPossibleNames.First();
+                Name = GetRandomName();
                 takenNames.Add(Name);
             }
             else
             {
                 string previousName = Name;
-                Name = allPossibleNames.Except(takenNames).First();
+
+                Name = GetRandomName();
+
                 takenNames.Remove(previousName);
                 takenNames.Add(Name);
             }
         }
+
+        private static string GetRandomName() =>
+            allPossibleNames
+                .Except(takenNames)
+                .ElementAt(rnd.Next(allPossibleNames.Count - takenNames.Count));
 
         private static HashSet<string> GetAllPossibleNames()
         {

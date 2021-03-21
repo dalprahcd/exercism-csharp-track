@@ -45,10 +45,11 @@ namespace Exercism.CSharp.Solutions.RobotNameExercise.Tests
         public void Robot_names_are_unique()
         {
             var names = new HashSet<string>();
-            for (int i = 0; i < 5_000; i++)
+            for (int i = 0; i < 10_000; i++)
             {
                 var robot = new Robot();
                 Assert.True(names.Add(robot.Name));
+                Assert.Matches(@"^[A-Z]{2}\d{3}$", robot.Name);
             }
         }
     }
