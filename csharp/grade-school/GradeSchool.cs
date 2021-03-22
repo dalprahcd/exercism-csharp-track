@@ -12,14 +12,14 @@ namespace Exercism.CSharp.Solutions.GradeSchoolExercise
 
         public IEnumerable<string> Roster() =>
             schoolRoster
-                .OrderBy(k => k.Value)
-                .ThenBy(k => k.Key)
-                .Select(k => k.Key);
+                .OrderBy(kvp => kvp.Value)
+                .ThenBy(kvp => kvp.Key)
+                .Select(kvp => kvp.Key);
 
         public IEnumerable<string> Grade(int grade) =>
             schoolRoster
-                .Where(k => k.Value == grade)
-                .Select(k => k.Key)
-                .OrderBy(s => s);
+                .Where(kvp => kvp.Value == grade)
+                .Select(kvp => kvp.Key)
+                .OrderBy(student => student);
     }
 }
