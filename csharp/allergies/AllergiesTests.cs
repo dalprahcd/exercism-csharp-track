@@ -1,4 +1,5 @@
 // This file was auto-generated based on version 2.0.0 of the canonical data.
+
 using Xunit;
 
 namespace Exercism.CSharp.Solutions.AllergiesExercise.Tests
@@ -289,15 +290,7 @@ namespace Exercism.CSharp.Solutions.AllergiesExercise.Tests
         public void No_allergies()
         {
             var sut = new Allergies(0);
-            Assert.True(sut.IsAllergicTo(Allergen.None));
-        }
-
-        [Fact]
-        public void No_allergies_list()
-        {
-            var sut = new Allergies(0);
-            var expected = new[] { Allergen.None };
-            Assert.Equal(expected, sut.List());
+            Assert.Empty(sut.List());
         }
 
         [Fact]

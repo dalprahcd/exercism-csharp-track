@@ -7,31 +7,32 @@ namespace Exercism.CSharp.Solutions.AllergiesExercise
     [Flags]
     public enum Allergen
     {
-        None            = 0,
-        Eggs            = 1,
-        Peanuts         = 2,
-        Shellfish       = 4,
-        Strawberries    = 8,
-        Tomatoes        = 16,
-        Chocolate       = 32,
-        Pollen          = 64,
-        Cats            = 128
+        Eggs = 1,
+        Peanuts = 2,
+        Shellfish = 4,
+        Strawberries = 8,
+        Tomatoes = 16,
+        Chocolate = 32,
+        Pollen = 64,
+        Cats = 128
     }
-
     public class Allergies
     {
         private readonly Allergen allergies;
+        private readonly IEnumerable<Allergen> listOfAllergies;
 
-        public Allergies(int mask) =>
+        public Allergies(int mask)
+        {
             allergies = (Allergen)mask;
 
-        public bool IsAllergicTo(Allergen allergen) =>
-            (allergies & allergen) == allergen;
+            listOfAllergies = Enum
+                                .GetValues(typeof(Allergen))
+                                .Cast<Allergen>()
+                                .Where(allergen => (allergies & allergen) == allergen);
+        }
 
-        public IEnumerable<Allergen> List() =>
-            Enum.GetValues(typeof(Allergen))
-                .Cast<Allergen>()
-                .Where(a => a != Allergen.None && (allergies & a) == a)
-                .DefaultIfEmpty(Allergen.None);
+        public bool IsAllergicTo(Allergen allergen) => (allergies & allergen) == allergen;
+
+        public IEnumerable<Allergen> List() => listOfAllergies;
     }
 }
