@@ -121,7 +121,7 @@ namespace Exercism.CSharp.Solutions.MatchingBracketsExercise.Tests
         [Fact]
         public void Complex_latex_expression()
         {
-            const string value = @"\left(\begin{array}{cc} \frac{1}{3} & x\\ \mathrm{e}^{x} &... x^2 \end{array}\right)";
+            const string value = "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)";
             Assert.True(MatchingBrackets.IsPaired(value));
         }
     }

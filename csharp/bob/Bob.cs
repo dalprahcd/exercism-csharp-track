@@ -7,32 +7,36 @@ namespace Exercism.CSharp.Solutions.BobExercise
     {
         public static string Response(string statement)
         {
-            if (string.IsNullOrWhiteSpace(statement))
+            if (statement.IsSilence())
             {
                 return "Fine. Be that way!";
             }
 
-            statement = statement.Trim();
+            if (statement.IsShouting() && statement.IsQuestion())
+            {
+                return "Calm down, I know what I'm doing!";
+            }
 
-            return statement.IsShouting()
-                ? statement.IsQuestion()
-                    ? "Calm down, I know what I'm doing!"
-                    : "Whoa, chill out!"
-                : statement.IsQuestion()
-                    ? "Sure."
-                    : "Whatever.";
+            if (statement.IsQuestion())
+            {
+                return "Sure.";
+            }
+
+            if (statement.IsShouting())
+            {
+                return "Whoa, chill out!";
+            }
+
+            return "Whatever.";
         }
 
-        private static bool IsShouting(this string text) =>
-            !text.IsGreeting() &&
-            (Regex.IsMatch(text, @"\!$") ||
-            (text.Any(char.IsLetter) && Regex.IsMatch(text, "^[^a-z]*$")));
+        private static bool IsShouting(this string message) =>
+            message.Any(char.IsLetter) && message == message.ToUpper();
 
-        private static bool IsQuestion(this string text) =>
-            Regex.IsMatch(text, @"\?$");
+        private static bool IsQuestion(this string message) =>
+            message.TrimEnd().EndsWith("?");
 
-        private static bool IsGreeting(this string text) =>
-            Regex.IsMatch(text, @"\b[Hh]i\b") ||
-            Regex.IsMatch(text, @"\b[Hh]ello\b");
+        private static bool IsSilence(this string message) =>
+            string.IsNullOrWhiteSpace(message);
     }
 }

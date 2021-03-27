@@ -61,7 +61,7 @@ namespace Exercism.CSharp.Solutions.BobExercise.Tests
         }
 
         [Fact]
-        public void Shouting_with_numbers()
+        public void Shouting_numbers()
         {
             Assert.Equal("Whoa, chill out!", Bob.Response("1, 2, 3 GO!"));
         }
@@ -70,12 +70,6 @@ namespace Exercism.CSharp.Solutions.BobExercise.Tests
         public void No_letters()
         {
             Assert.Equal("Whatever.", Bob.Response("1, 2, 3"));
-        }
-
-        [Fact]
-        public void Shouting_no_letters()
-        {
-            Assert.Equal("Whoa, chill out!", Bob.Response("10!"));
         }
 
         [Fact]
@@ -145,27 +139,9 @@ namespace Exercism.CSharp.Solutions.BobExercise.Tests
         }
 
         [Fact]
-        public void Ending_question_with_whitespace()
+        public void Ending_with_whitespace()
         {
             Assert.Equal("Sure.", Bob.Response("Okay if like my  spacebar  quite a bit?   "));
-        }
-
-        [Fact]
-        public void Ending_uppercase_shouting_with_whitespace()
-        {
-            Assert.Equal("Whoa, chill out!", Bob.Response("   STOP    MY    SPACEBAR   "));
-        }
-
-                [Fact]
-        public void Ending_exclamation_shouting_with_whitespace()
-        {
-            Assert.Equal("Whoa, chill out!", Bob.Response("I   DON'T    KNOW   HOW  TO   DO  IT  !!      "));
-        }
-
-        [Fact]
-        public void Ending_shouting_question_with_whitespace()
-        {
-            Assert.Equal("Calm down, I know what I'm doing!", Bob.Response("IS   THIS    REAL    LIFE   ?   "));
         }
 
         [Fact]

@@ -5,7 +5,7 @@ namespace Exercism.CSharp.Solutions.MatchingBracketsExercise
 {
     public static class MatchingBrackets
     {
-        private static readonly Dictionary<char, char> wrapperPairs = new Dictionary<char, char>
+        private static readonly IReadOnlyDictionary<char, char> wrapperPairs = new Dictionary<char, char>
         {
             ['('] = ')',
             ['['] = ']',
@@ -14,26 +14,26 @@ namespace Exercism.CSharp.Solutions.MatchingBracketsExercise
 
         public static bool IsPaired(string input)
         {
-            var wrappersToCheck = new Stack<char>();
+            var openGroups = new Stack<char>();
 
             foreach (var wrapper in input.Where(IsWrapper))
             {
                 if (wrapperPairs.Keys.Contains(wrapper))
                 {
                     // It is a opening wrapper, add to the stack.
-                    wrappersToCheck.Push(wrapper);
+                    openGroups.Push(wrapper);
                 }
-                else if (wrappersToCheck.Count > 0)
+                else if (openGroups.Count > 0)
                 {
                     // It is a closing wrapper with existing opening wrapper on the stack
                     // check if it is the correct pair
-                    if (!wrappersToCheck.Peek().IsCorrectPair(wrapper))
+                    if (!openGroups.Peek().IsCorrectPair(wrapper))
                     {
                         return false;
                     }
 
                     // remove this opening wrapper from the stack
-                    _ = wrappersToCheck.Pop();
+                    openGroups.Pop();
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace Exercism.CSharp.Solutions.MatchingBracketsExercise
             }
 
             // All opening wrappers should have been matched.
-            return wrappersToCheck.Count == 0;
+            return openGroups.Count == 0;
         }
 
         private static bool IsWrapper(this char ch) =>
