@@ -17,14 +17,12 @@ namespace Exercism.CSharp.Solutions.NucleotideCountExercise
 
             foreach (var c in sequence)
             {
-                if (nucleotideCounts.ContainsKey(c))
-                {
-                    nucleotideCounts[c]++;
-                }
-                else
+                if (!nucleotideCounts.ContainsKey(c))
                 {
                     throw new ArgumentException();
                 }
+
+                nucleotideCounts[c]++;
             }
 
             return nucleotideCounts;
