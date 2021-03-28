@@ -5,21 +5,21 @@ namespace Exercism.CSharp.Solutions.HighScoresExercise
 {
     public class HighScores
     {
-        private readonly IEnumerable<int> scores;
+        private readonly IEnumerable<int> _scores;
 
         public HighScores(IEnumerable<int> list) =>
-            scores = list ?? new List<int>();
+            _scores = list ?? Enumerable.Empty<int>();
 
         public IEnumerable<int> Scores() =>
-            scores;
+            _scores;
 
         public int Latest() =>
-            scores.LastOrDefault();
+            _scores.Last();
 
         public int PersonalBest() =>
-            scores.Any() ? scores.Max() : default;
+            _scores.Max();
 
         public IEnumerable<int> PersonalTopThree() =>
-            scores.OrderByDescending(x => x).Take(3);
+            _scores.OrderByDescending(x => x).Take(3);
     }
 }

@@ -1,4 +1,4 @@
-// This file was auto-generated based on version 4.0.0 of the canonical data.
+// This file was auto-generated based on version  of the canonical data.
 
 using System.Collections.Generic;
 using Xunit;
@@ -61,6 +61,22 @@ namespace Exercism.CSharp.Solutions.HighScoresExercise.Tests
         {
             var sut = new HighScores(new List<int> { 40 });
             Assert.Equal(new List<int> { 40 }, sut.PersonalTopThree());
+        }
+
+        [Fact]
+        public void Latest_score_should_not_change_after_calling_personal_best()
+        {
+            var sut = new HighScores(new List<int> { 20, 10, 30, 3, 2, 1 });
+            Assert.Equal(30, sut.PersonalBest());
+            Assert.Equal(1, sut.Latest());
+        }
+
+        [Fact]
+        public void Latest_score_should_not_change_after_calling_personal_top_three()
+        {
+            var sut = new HighScores(new List<int> { 20, 100, 30, 90, 2, 70 });
+            Assert.Equal(new List<int> { 100, 90, 70 }, sut.PersonalTopThree());
+            Assert.Equal(70, sut.Latest());
         }
     }
 }

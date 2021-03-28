@@ -1,33 +1,33 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Exercism.CSharp.Solutions.NucleotideCountExercise
 {
     public static class NucleotideCount
     {
-        private static readonly char[] nucleotide = { 'A', 'C', 'G', 'T' };
-
         public static IDictionary<char, int> Count(string sequence)
         {
-            if (sequence is null)
+            var nucleotideCounts = new Dictionary<char, int>
             {
-                throw new ArgumentNullException(nameof(sequence));
+                ['A'] = 0,
+                ['C'] = 0,
+                ['G'] = 0,
+                ['T'] = 0
+            };
+
+            foreach (var c in sequence)
+            {
+                if (nucleotideCounts.ContainsKey(c))
+                {
+                    nucleotideCounts[c]++;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
             }
 
-            if (sequence.ToCharArray().Any(c => !nucleotide.Contains(c)))
-            {
-                throw new ArgumentException(nameof(sequence));
-            }
-
-            Dictionary<char, int> output = new Dictionary<char, int>();
-
-            foreach (var n in nucleotide)
-            {
-                output.Add(n, sequence.ToCharArray().Count(c => c == n));
-            }
-
-            return output;
+            return nucleotideCounts;
         }
     }
 }
