@@ -1,5 +1,5 @@
+#include <math.h>
 #include "darts.h"
-#include "math.h"
 
 #define SCORE_OUTSIDE           0
 #define SCORE_OUTER_CIRCLE      1

@@ -1,32 +1,37 @@
-#include "ctype.h"
-#include "string.h"
+#include <ctype.h>
+#include <string.h>
 
 #include "isogram.h"
 
+#define MAX_LETTER 26
+
 bool is_isogram(const char phrase[])
 {
-    if (!phrase)
+    if (phrase == NULL)
     {
         return false;
     }
-    
-    int length = strlen(phrase);
-    
-    for (int i = 0; i < length; i++)
+
+    bool usedLetters[MAX_LETTER] = { false };
+
+    for (size_t i = 0; i < strlen(phrase); i++)
     {
-        if (!isalpha(phrase[i]))
+        unsigned char letter = phrase[i];
+
+        if (!isalpha(letter))
         {
             continue;
         }
         
-        for (int j = i + 1; j < length; j++)
-        {
-            if (tolower(phrase[i]) == tolower(phrase[j]))
-            {
-                return false;
-            } 
-        }
-    }
+        int index = tolower(letter) - 'a';
 
+        if (usedLetters[index])
+        {
+            return false;
+        }
+        
+        usedLetters[index] = true;
+    }
+    
     return true;
 }

@@ -1,5 +1,6 @@
+#include <math.h>
+
 #include "resistor_color_trio.h"
-#include "math.h"
 
 resistor_value_t color_code(const resistor_band_t* bands)
 {

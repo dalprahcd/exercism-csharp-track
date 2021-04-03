@@ -1,5 +1,6 @@
+#include <math.h>
+
 #include "armstrong_numbers.h"
-#include "math.h"
 
 static int count_digits(int number);
 
@@ -22,6 +23,6 @@ bool is_armstrong_number(int candidate)
 static int count_digits(int number)
 {
     int digits = 1;
-    while (number/=10) { digits++; }
+    while (number /= 10) { digits++; }
     return digits;
 }
