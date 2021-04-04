@@ -13,8 +13,9 @@ bool is_isogram(const char phrase[])
     }
 
     bool usedLetters[MAX_LETTER] = { false };
+    size_t length = strlen(phrase);
 
-    for (size_t i = 0; i < strlen(phrase); i++)
+    for (size_t i = 0; i < length; i++)
     {
         unsigned char letter = phrase[i];
 
