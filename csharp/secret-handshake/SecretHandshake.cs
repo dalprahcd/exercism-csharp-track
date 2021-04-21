@@ -12,7 +12,6 @@ namespace Exercism.CSharp.Solutions.SecretHandshakeExercise
         CloseYourEyes   = 4,
         Jump            = 8,
         ReverseOrder    = 16
-
     }
 
     public static class SecretHandshake
