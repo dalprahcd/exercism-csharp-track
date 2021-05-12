@@ -34,5 +34,5 @@ uint8_t score(coordinate_t landing_position)
 
 static float get_radius(coordinate_t landing_position)
 {
-    return sqrtf(powf(landing_position.x, 2.0f) + powf(landing_position.y, 2.0f));
+    return hypotf(landing_position.x, landing_position.y);
 }
