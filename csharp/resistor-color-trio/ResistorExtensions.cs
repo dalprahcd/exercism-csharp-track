@@ -2,7 +2,6 @@ using System;
 
 namespace Exercism.CSharp.Solutions.ResistorColorTrioExercise
 {
-
     public static class ResistorExtensions
     {
         public static int ToResistorValue(this string[] colors)
