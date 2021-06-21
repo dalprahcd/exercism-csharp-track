@@ -27,13 +27,7 @@ final _letterPointsMap = const {
   'Z': 10
 };
 
-int score(String word) {
-  int sum = 0;
-
-  for (var i = 0; i < word.length; i++) {
-    var letter = word[i].toUpperCase();
-    sum += _letterPointsMap[letter];
-  }
-
-  return sum;
-}
+int score(String word) => word
+    .toUpperCase()
+    .split('')
+    .fold(0, (prev, next) => prev + _letterPointsMap[next]);
