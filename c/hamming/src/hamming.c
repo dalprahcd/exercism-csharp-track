@@ -1,12 +1,12 @@
 #include <string.h>
 #include "hamming.h"
 
-size_t compute(const char *lhs, const char *rhs)
+long long compute(const char *lhs, const char *rhs)
 {
-    size_t hamming = 0;
+    long long hamming = 0;
 
-    for (; *lhs != '\0';)
-    {
+    while (*lhs != '\0' && *rhs != '\0')
+    {      
         if (*lhs != *rhs)
         {
             hamming++;
@@ -15,8 +15,8 @@ size_t compute(const char *lhs, const char *rhs)
         lhs++;
         rhs++;
     }
-    
-    if (*rhs == '\0')
+       
+    if (*lhs == '\0' && *rhs == '\0')
     {
         return hamming;
     }
