@@ -7,23 +7,23 @@ void main() {
   group('ResistorColor', () {
     group('Color codes', () {
       test('Black', () {
-        final int result = resistorColor.colorCode('black');
+        final result = resistorColor.colorCode('black');
         expect(result, equals(0));
       }, skip: false);
 
       test('White', () {
-        final int result = resistorColor.colorCode('white');
+        final result = resistorColor.colorCode('white');
         expect(result, equals(9));
       }, skip: false);
 
       test('Orange', () {
-        final int result = resistorColor.colorCode('orange');
+        final result = resistorColor.colorCode('orange');
         expect(result, equals(3));
       }, skip: false);
     });
 
     test('Colors', () {
-      final List<String> result = resistorColor.colors;
+      final result = resistorColor.colors;
       expect(
           result,
           equals(<String>[

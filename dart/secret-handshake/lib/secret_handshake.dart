@@ -1,4 +1,4 @@
-/// Class responsible for parsing the Secret Handshake
+/// Class responsible for parsing the Secret Handshake.
 class SecretHandshake {
   final _handShakeMap = const {
     1: 'wink',
@@ -8,7 +8,7 @@ class SecretHandshake {
     16: 'reverse'
   };
 
-  /// Returns the secret commands for a given [handshake]
+  /// Returns the secret commands for a given [handshake].
   Iterable<String> commands(int handshake) {
     var query = <String>[];
 

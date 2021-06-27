@@ -1,10 +1,12 @@
+/// Responsible for calculating the Collatz Conjecture number.
 class CollatzConjecture {
+  /// Returns the Collatz Conjecture step number for a given [number].
   int steps(int number) {
     if (number < 1) {
       throw ArgumentError('Only positive numbers are allowed');
     }
 
-    int step = 0;
+    var step = 0;
 
     while (number != 1) {
       if (number.isEven) {

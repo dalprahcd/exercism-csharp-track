@@ -1,4 +1,4 @@
-final _letterPointsMap = const {
+const _letterPointsMap = {
   'A': 1,
   'B': 3,
   'C': 3,
@@ -27,6 +27,7 @@ final _letterPointsMap = const {
   'Z': 10
 };
 
+/// Returns the scrabble score for given [word].
 int score(String word) => word
     .toUpperCase()
     .split('')

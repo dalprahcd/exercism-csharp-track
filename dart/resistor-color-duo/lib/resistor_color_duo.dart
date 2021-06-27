@@ -1,3 +1,4 @@
+/// Responsible for parsing resitor value from color.
 class ResistorColorDuo {
   final _colorMap = const {
     'black': 0,
@@ -12,6 +13,7 @@ class ResistorColorDuo {
     'white': 9
   };
 
+  /// Returns the resistor value from given [colors].
   int value(List<String> colors) {
     if (colors.length < 2) {
       throw ArgumentError('Expect at leat two colors');

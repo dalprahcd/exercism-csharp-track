@@ -7,29 +7,31 @@ import 'package:test/test.dart';
 /// if you wish to learn more about predicates and matchers used in Unit Testing for Dart.
 
 void main() {
-  final collatzConjecture = new CollatzConjecture();
+  final collatzConjecture = CollatzConjecture();
   final onlyPositive = predicate(
-      (ArgumentError e) => e is ArgumentError && e.message == 'Only positive numbers are allowed',
+      (ArgumentError e) =>
+          e is ArgumentError &&
+          e.message == 'Only positive numbers are allowed',
       'an ArgumentError with the message "Only positive numbers are allowed"');
 
   group('CollatzConjecture', () {
     test('zero steps for one', () {
-      final int result = collatzConjecture.steps(1);
+      final result = collatzConjecture.steps(1);
       expect(result, equals(0));
     }, skip: false);
 
     test('divide if even', () {
-      final int result = collatzConjecture.steps(16);
+      final result = collatzConjecture.steps(16);
       expect(result, equals(4));
     }, skip: false);
 
     test('even and odd steps', () {
-      final int result = collatzConjecture.steps(12);
+      final result = collatzConjecture.steps(12);
       expect(result, equals(9));
     }, skip: false);
 
     test('large number of even and odd steps', () {
-      final int result = collatzConjecture.steps(1000000);
+      final result = collatzConjecture.steps(1000000);
       expect(result, equals(152));
     }, skip: false);
 
