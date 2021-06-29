@@ -29,7 +29,7 @@ void main() {
     }, skip: false);
 
     test('an even-sized word', () {
-      final String result = reverse('drawer');
+      final result = reverse('drawer');
       expect(result, equals('reward'));
     }, skip: false);
   });

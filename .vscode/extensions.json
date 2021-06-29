@@ -10,7 +10,10 @@
 		"streetsidesoftware.code-spell-checker",
 		"dart-code.flutter",
 		"pkief.material-icon-theme",
-		"sdras.night-owl"
+		"sdras.night-owl",
+		"usernamehw.errorlens",
+		"aaron-bond.better-comments",
+		"naumovs.color-highlight"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [

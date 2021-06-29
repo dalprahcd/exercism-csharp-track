@@ -1,3 +1,5 @@
+/// Responsible for greeting the world.
 class HelloWorld {
-  String hello() => "Hello, World!";
+  /// Returns a greeting to the world.
+  String hello() => 'Hello, World!';
 }
